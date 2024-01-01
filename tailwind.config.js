@@ -17,6 +17,9 @@ module.exports = {
       },
     },
     extend: {
+      screens: {
+        sml:"750px"
+      },
       colors: {
         text_gray: "#727475",
         button_blue: "#0A93F5",

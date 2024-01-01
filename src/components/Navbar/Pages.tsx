@@ -9,7 +9,7 @@ function Pages() {
     link: string;
   }
   return (
-    <ul className="hidden sm:flex gap-5 text-text_gray justify-center items-center">
+    <ul className="hidden sml:flex gap-5 text-text_gray justify-center items-center">
       {navDatas.map((data: navDataInterface, id: number) => (
         <li
           key={id}

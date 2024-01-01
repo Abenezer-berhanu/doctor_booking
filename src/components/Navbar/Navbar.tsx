@@ -11,7 +11,7 @@ function Navbar() {
   return (
     <div className="">
       <Mininavbar />
-      <div className="py-5 flex px-4 sm:px-0 justify-between sm:justify-around gap-5 items-center">
+      <div className="py-5 flex px-4 sml:px-0 justify-between sml:justify-around gap-5 items-center">
         <Link href={"/"} className="flex items-center">
           <Image
             src={"/logo.png"}
@@ -20,17 +20,19 @@ function Navbar() {
             height={20}
             className=""
           />
-          <p className="font-bold font-lg sm:text-xl text-button_blue">
+          <p className="font-bold font-lg sml:text-xl text-button_blue">
             DocTreat
           </p>
         </Link>
-          <Pages />
+        <Pages />
         <div className="flex items-center gap-2">
-          <span className="flex items-center text-text_gray gap-2">
-            <FaPhoneVolume className="text-button_blue text-lg sm:text-2xl" />
+          <span className="flex items-center text-text_gray gap-2 max-sml:hidden">
+            <FaPhoneVolume className="text-button_blue text-lg sml:text-2xl" />
             <span className="flex flex-col text-sm">
               <p className="text-sm font-semibold">Call Center:</p>
-              <p className="text-xs font-semibold text-black">+(444) 864 434 57</p>
+              <p className="text-xs font-semibold text-black">
+                +(444) 864 434 57
+              </p>
             </span>
           </span>
           <Button
@@ -39,7 +41,7 @@ function Navbar() {
           >
             <Link
               href={"/Appointment"}
-              className="flex items-center justify-center gap-2"
+              className="flex items-center justify-center gap-2 text-sm"
             >
               Appointment
               <FaPlus className="h-full" />
