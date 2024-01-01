@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import navDatas from "./navDatas";
 import { DropdownMenuRadioGroupDemo } from "./Dropdown";
@@ -13,7 +12,7 @@ function Pages() {
       {navDatas.map((data: navDataInterface, id: number) => (
         <li
           key={id}
-          className="border-b-2 border-transparent hover:border-button_blue duration-200"
+          className="border-b-2 border-transparent hover:border-primary duration-200"
         >
           <Link href={data.link}>{data.label}</Link>
         </li>

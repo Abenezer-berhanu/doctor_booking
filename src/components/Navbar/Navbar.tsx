@@ -20,14 +20,14 @@ function Navbar() {
             height={20}
             className=""
           />
-          <p className="font-bold font-lg sml:text-xl text-button_blue">
+          <p className="font-bold font-lg sml:text-xl text-primary">
             DocTreat
           </p>
         </Link>
         <Pages />
         <div className="flex items-center gap-2">
           <span className="flex items-center text-text_gray gap-2 max-sml:hidden">
-            <FaPhoneVolume className="text-button_blue text-lg sml:text-2xl" />
+            <FaPhoneVolume className="text-primary text-lg sml:text-2xl" />
             <span className="flex flex-col text-sm">
               <p className="text-sm font-semibold">Call Center:</p>
               <p className="text-xs font-semibold text-black">

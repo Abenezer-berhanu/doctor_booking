@@ -18,10 +18,11 @@ module.exports = {
     },
     extend: {
       screens: {
-        sml:"750px"
+        sml: "700px",
+        lgl: "950px",
       },
       colors: {
-        text_gray: "#727475",
+        text_gray: "#969fa3",
         button_blue: "#0A93F5",
         bg_gray: "#EEF4FF",
         bg_blue: "#3C59A5",
