@@ -5,6 +5,7 @@ import {
   CardDescription,
   CardHeader,
 } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import { specialists } from "@/lib/datas";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,7 +17,7 @@ export default function Home() {
     <>
       <div className="flex flex-col relative">
         <div className="w-full bg-no-repeat bg-cover h-screen bg-gradient-to-r from-cyan-400 to-blue-400 text-white flex justify-start sml:items-center relative z-10">
-          <div className="bg-white h-36 w-36 rounded-full absolute mx-auto left-0 right-0 z-10 sml:top-4 max-sml:bottom-4 flex flex-col items-center justify-center p-5 text-black">
+          <div className="bg-white h-36 w-36 rounded-full absolute mx-auto left-0 right-0 z-10 sml:top-4 max-sml:bottom-40 flex flex-col items-center justify-center p-5 text-black">
             <p className="text-primary">
               <strong className="text-5xl font-bold">95</strong>%
             </p>
@@ -64,7 +65,9 @@ export default function Home() {
           </div>
         </div>
         <Card className=" w-[90%] mx-auto -mt-11 z-20 px-5">
-          <CardHeader>Take Appointment and save you time.</CardHeader>
+          <CardHeader className="text-3xl text-primary font-bold text-wrap">
+            Take Appointment and save your time.
+          </CardHeader>
           <CardContent className="grid grid-cols-1 sm:grid-cols-4 gap-2">
             <span className="flex flex-col">
               <label htmlFor="name" className="text-black text-sm">
@@ -74,7 +77,7 @@ export default function Home() {
                 type="text"
                 name="name"
                 placeholder="name"
-                className="border py-2 rounded-md indent-3 h-10 outline-none bg-text_gray focus:bg-white"
+                className="border py-2 rounded-md indent-3 h-10 outline-none"
               />
             </span>
             <span className="flex flex-col">
@@ -85,7 +88,7 @@ export default function Home() {
                 type="date"
                 name="date"
                 placeholder="date"
-                className="border py-2 rounded-md indent-3 h-10 outline-none bg-text_gray focus:bg-white"
+                className="border py-2 rounded-md indent-3 h-10 outline-none"
               />
             </span>
             <span className="flex flex-col">
@@ -94,7 +97,7 @@ export default function Home() {
               </label>
               <select
                 name="specialist"
-                className="h-10 outline-none bg-text_gray"
+                className="h-10 outline-none rounded-md"
               >
                 <option value="">Select Specialist</option>
                 {specialists.map((specialist: string, id: number) => (
@@ -112,6 +115,41 @@ export default function Home() {
             </span>
           </CardContent>
         </Card>
+        <div className="flex max-w-[1300px] mx-auto justify-center max-sm:flex-col sml:justify-evenly my-10 p-2 items-center">
+          <div className="w-1/2 max-sml:w-full rounded-md">
+            <Image
+              src={"/terapist.png"}
+              alt="therapist"
+              width={300}
+              height={300}
+              className="w-full h-full rounded-md sml:scale-75"
+            />
+          </div>
+          <div className="w-1/2 max-sml:w-full flex flex-col gap-4">
+            <h1 className="font-bold text-4xl text-black">
+              <span className="text-primary text-wrap">Drags § Therapies</span>{" "}
+              can
+              <br />
+              Reduce the Attacks
+            </h1>
+            <p className="text-text_gray">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
+              similique. Perferendis, provident a? Fugiat corporis, asperiores
+              aspernatur maxime saepe debitis voluptatem facere, totam harum
+              suscipit vel, et vero eos id!
+            </p>
+            {/* <Card className="w-fit">
+              <CardContent>
+
+              </CardContent>
+            </Card> */}
+            <Button className="text-white bg-primary rounded-3xl w-fit">
+              Add Details
+            </Button>
+          </div>
+        </div>
+        <Separator />
+        
       </div>
     </>
   );
