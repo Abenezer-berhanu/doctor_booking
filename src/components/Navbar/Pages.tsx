@@ -1,5 +1,7 @@
+"use client";
 import Link from "next/link";
 import navDatas from "./navDatas";
+import { DropdownMenuRadioGroupDemo } from "./Dropdown";
 
 function Pages() {
   interface navDataInterface {
@@ -16,7 +18,7 @@ function Pages() {
           <Link href={data.link}>{data.label}</Link>
         </li>
       ))}
-      
+      <DropdownMenuRadioGroupDemo />
     </ul>
   );
 }
