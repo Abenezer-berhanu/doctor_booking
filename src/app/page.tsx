@@ -12,6 +12,7 @@ import Link from "next/link";
 import { HiMiniLightBulb } from "react-icons/hi2";
 import { IoStar } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa6";
+import Gallary from "@/components/DoctorsGallary/Gallary";
 
 export default function Home() {
   return (
@@ -161,8 +162,8 @@ export default function Home() {
             dolorem, natus quas sapiente, quos quod possimus minus libero totam
             quam.
           </p>
-          <div className="grid grid-cols-3 grid-rows-8 my-8 max-w-[800px] max-h-[800px] mx-auto gap-5">
-            <div className="w-full h-[200px] bg-cover bg-[url('/grid1.jpg')] rounded-lg row-start-2 row-span-2 shadow-md border border-slate-300"></div>
+          <div className="grid sml:grid-cols-3 sml:grid-rows-8 my-8 max-w-[800px] sml:max-h-[800px] mx-auto gap-5">
+            <div className="w-full h-[200px] bg-cover bg-[url('/grid1.jpg')] rounded-lg sml:row-start-2 sml:row-span-2 shadow-md border border-slate-300"></div>
             <div className="w-full p-2 row-span-4 shadow-md border border-slate-300">
               <Image
                 src={"/drug.png"}
@@ -182,7 +183,7 @@ export default function Home() {
                 <FaPlus />
               </Button>
             </div>
-            <div className="w-full bg-white p-2 row-start-2 row-span-4 shadow-md border border-slate-300">
+            <div className="w-full bg-white p-2 sml:row-start-2 sml:row-span-4 shadow-md border border-slate-300">
               <Image
                 src={"/heart.png"}
                 width={40}
@@ -201,7 +202,7 @@ export default function Home() {
                 <FaPlus />
               </Button>
             </div>
-            <div className="w-full row-start-4 row-span-4 shadow-md border border-slate-300 p-2">
+            <div className="w-full sml:row-start-4 sml:row-span-4 shadow-md border border-slate-300 p-2">
               <Image
                 src={"/lung.png"}
                 width={40}
@@ -220,15 +221,16 @@ export default function Home() {
                 <FaPlus />
               </Button>
             </div>
-            <div className="w-full bg-indigo-900 text-white rounded-md row-start-5 row-span-3 shadow-md border border-slate-300 p-5 text-start font-bold text-3xl">
+            <div className="w-full bg-indigo-900 text-white rounded-md sml:row-start-5 sml:row-span-3 shadow-md border border-slate-300 p-5 text-start font-bold text-3xl">
               Merdio Care <br />
               Facilitates Provide Quick
               <Button className="text-xs rounded-full">
                 view all services
               </Button>
             </div>
-            <div className="w-full bg-black row-start-6 row-span-2 shadow-md border border-slate-300 bg-[url('/allergy.jpg')] bg-cover"></div>
+            <div className="w-full bg-black sml:row-start-6 sml:row-span-2 shadow-md border border-slate-300 bg-[url('/allergy.jpg')] bg-cover"></div>
           </div>
+          <Gallary />
         </div>
       </div>
     </>
