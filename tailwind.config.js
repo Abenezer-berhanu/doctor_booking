@@ -23,7 +23,7 @@ module.exports = {
       },
       colors: {
         text_gray: "#969fa3",
-        button_blue: "#0A93F5",
+        button_blue: "#3C59A5",
         bg_gray: "#EEF4FF",
         bg_blue: "#3C59A5",
         bg_black: "#010E17",

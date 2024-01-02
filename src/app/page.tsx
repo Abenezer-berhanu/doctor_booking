@@ -1,9 +1,5 @@
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { specialists } from "@/lib/datas";
 import Image from "next/image";
@@ -14,6 +10,7 @@ import { FaPlus } from "react-icons/fa6";
 import Gallary from "@/components/DoctorsGallary/Gallary";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import DoctorsSmall from "@/components/DoctorsGallary/DoctorsSmall";
+import { MdOutlineStarPurple500 } from "react-icons/md";
 
 export default function Home() {
   return (
@@ -241,6 +238,48 @@ export default function Home() {
           <Gallary />
           <Separator />
           <DoctorsSmall />
+          <div className="w-full min-h-80 flex flex-col sml:flex-row">
+            <Image
+              src="/childTreatment.png"
+              alt="treatment"
+              width={500}
+              height={500}
+              quality={100}
+              className="w-full sml:w-1/2"
+            />
+            <div className="bg-button_blue text-white pl-5 sml:pl-10 sml:w-1/2 p-3 flex flex-col justify-center">
+              <h1 className="font-bold text-2xl sml:text-3xl text-center">
+                Our Client Happy <br /> Say About Us
+              </h1>
+              <div className="text-yellow-500 flex justify-center items-center my-5">
+                <MdOutlineStarPurple500 />
+                <MdOutlineStarPurple500 />
+                <MdOutlineStarPurple500 />
+                <MdOutlineStarPurple500 />
+                <MdOutlineStarPurple500 />
+              </div>
+              <p className="text-sm text-text_gray">
+              &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+                magnam eligendi id vitae qui maiores labore cupiditate eveniet
+                ex. Nesciunt corporis illo laboriosam sint aperiam placeat animi
+                tempore, recusandae voluptatem!&quot;
+              </p>
+              <div className="flex my-5 gap-3 items-center mx-auto justify-center">
+                <Avatar>
+                  <AvatarImage
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_cyKLTOT2BG1JqCOq4agn9t0Gv-VcD_Pi8w&usqp=CAU"
+                    alt="avatar"
+                    className="object-cover"
+                  />
+                  <AvatarFallback>AB</AvatarFallback>
+                </Avatar>
+               <span className="flex flex-col items-start">
+               <p>Jarvis Pepperspray</p>
+                <small className="text-text_gray">Designer</small>
+               </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
