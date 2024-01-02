@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import * as React from "react";
 import { imageLinks } from "./imagesData";
 
@@ -14,15 +14,21 @@ import Image from "next/image";
 
 export function CarouselSlide() {
   return (
-    <Carousel className="w-full max-w-[90%] mx-auto">
+    <Carousel className="w-full max-w-[60%] mx-auto">
       <CarouselPrevious />
       <CarouselContent className="-ml-1">
-        {imageLinks.map((image:string, index) => (
+        {imageLinks.map((image: string, index) => (
           <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/4">
             <div className="p-1">
               <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6 relative">
-                  <Image src={image} alt="image" fill priority/>
+                <CardContent className="flex aspect-square items-center justify-center p-6 relative rounded-md">
+                  <Image
+                    src={image}
+                    alt="image"
+                    fill
+                    priority
+                    className="rounded-md object-cover"
+                  />
                 </CardContent>
               </Card>
             </div>
