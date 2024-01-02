@@ -14,7 +14,7 @@ import Image from "next/image";
 
 export function CarouselSlide() {
   return (
-    <Carousel className="w-full max-w-[60%] mx-auto">
+    <Carousel className="w-full max-sml:max-w-[60%] max-w-[90%] mx-auto">
       <CarouselPrevious />
       <CarouselContent className="-ml-1">
         {imageLinks.map((image: string, index) => (

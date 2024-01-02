@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -13,6 +12,8 @@ import { HiMiniLightBulb } from "react-icons/hi2";
 import { IoStar } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa6";
 import Gallary from "@/components/DoctorsGallary/Gallary";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import DoctorsSmall from "@/components/DoctorsGallary/DoctorsSmall";
 
 export default function Home() {
   return (
@@ -134,17 +135,24 @@ export default function Home() {
               <br />
               Reduce the Attacks
             </h1>
-            <p className="text-text_gray">
+            <p className="text-text_gray text-sm">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
               similique. Perferendis, provident a? Fugiat corporis, asperiores
               aspernatur maxime saepe debitis voluptatem facere, totam harum
               suscipit vel, et vero eos id!
             </p>
-            {/* <Card className="w-fit">
-              <CardContent>
+            <div className="border shadow bg-transparent rounded-md flex max-sml:flex-col p-3 w-fit gap-2 text-sm">
+              <Avatar className="h-full flex items-center">
+                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarFallback>AB</AvatarFallback>
+              </Avatar>
+              <Separator orientation="vertical" />
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Facilis veniam quibusdam inventore saepe porro enim magnam
+              </p>
+            </div>
 
-              </CardContent>
-            </Card> */}
             <Button className="text-white bg-primary rounded-3xl w-fit">
               Add Details
             </Button>
@@ -231,6 +239,8 @@ export default function Home() {
             <div className="w-full bg-black sml:row-start-6 sml:row-span-2 shadow-md border border-slate-300 bg-[url('/allergy.jpg')] bg-cover"></div>
           </div>
           <Gallary />
+          <Separator />
+          <DoctorsSmall />
         </div>
       </div>
     </>
