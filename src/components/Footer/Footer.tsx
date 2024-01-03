@@ -9,8 +9,8 @@ function Footer() {
   return (
     <div className="w-full bg-bg_black py-20 text-white">
       <FooterCard />
-      <div className="grid grid-cols-2 sml:grid-cols-8 w-full mt-24 max-w-[1300px] mx-auto">
-        <div className="col-span-3 max-sm:col-span-1 flex flex-col gap-2">
+      <div className="grid grid-cols-2 max-sml:gap-5 sml:grid-cols-8 w-full mt-24 max-w-[1300px] px-2 mx-auto max-sml:place-items-center">
+        <div className="col-span-3 max-sm:col-span-1 flex flex-col gap-2 max-sml:items-center">
           <span className="text-xl font-bold flex gap-2 items-center text-primary">
             <Image
               src={"/logo.png"}
@@ -21,11 +21,11 @@ function Footer() {
             />
             DocTreat
           </span>
-          <p className="text-xs text-balance text-text_gray">
+          <p className="text-xs text-balance text-text_gray max-w-lg max-sml:text-center">
             Subscribe to our newsletter today to receive latest news
             administration cost effectively for tactical data.
           </p>
-          <div className="flex w-full gap-3 mt-2">
+          <div className="flex w-full gap-3 mt-2 max-sml:justify-center">
             <span className="text-primary p-3 border rounded-md hover:bg-primary hover:text-white duration-300">
               <FaFacebookF />
             </span>
@@ -84,9 +84,7 @@ function Footer() {
           </ul>
         </div>
         <div className="col-span-3 max-sm:col-span-1 flex flex-col items-center text-center">
-          <h1 className="text-bold text-xl mb-5">
-            Popular Services
-          </h1>
+          <h1 className="text-bold text-xl mb-5">Popular Services</h1>
           <FooterRecent />
           <FooterRecent />
         </div>
