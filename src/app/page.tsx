@@ -11,6 +11,7 @@ import Gallary from "@/components/DoctorsGallary/Gallary";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import DoctorsSmall from "@/components/DoctorsGallary/DoctorsSmall";
 import { MdOutlineStarPurple500 } from "react-icons/md";
+import LatestBlog from "@/components/LatestBlog/LatestBlog";
 
 export default function Home() {
   return (
@@ -259,10 +260,10 @@ export default function Home() {
                 <MdOutlineStarPurple500 />
               </div>
               <p className="text-sm text-text_gray">
-              &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-                magnam eligendi id vitae qui maiores labore cupiditate eveniet
-                ex. Nesciunt corporis illo laboriosam sint aperiam placeat animi
-                tempore, recusandae voluptatem!&quot;
+                &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Itaque magnam eligendi id vitae qui maiores labore cupiditate
+                eveniet ex. Nesciunt corporis illo laboriosam sint aperiam
+                placeat animi tempore, recusandae voluptatem!&quot;
               </p>
               <div className="flex my-5 gap-3 items-center mx-auto justify-center">
                 <Avatar>
@@ -273,12 +274,15 @@ export default function Home() {
                   />
                   <AvatarFallback>AB</AvatarFallback>
                 </Avatar>
-               <span className="flex flex-col items-start">
-               <p>Jarvis Pepperspray</p>
-                <small className="text-text_gray">Designer</small>
-               </span>
+                <span className="flex flex-col items-start">
+                  <p>Jarvis Pepperspray</p>
+                  <small className="text-text_gray">Designer</small>
+                </span>
               </div>
             </div>
+          </div>
+          <div className="max-w-[900px] mx-auto w-full">
+            <LatestBlog />
           </div>
         </div>
       </div>
