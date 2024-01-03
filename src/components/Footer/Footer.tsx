@@ -40,29 +40,55 @@ function Footer() {
         <div className="col-span-1">
           <h1 className="text-bold text-xl mb-5">Useful Links</h1>
           <ul className="flex flex-col gap-3 text-xs text-text_gray ">
-            <li className="hover:text-white duration-200 cursor-pointer">About Us</li>
-            <li className="hover:text-white duration-200 cursor-pointer">Terms of use</li>
-            <li className="hover:text-white duration-200 cursor-pointer">Our services</li>
-            <li className="hover:text-white duration-200 cursor-pointer">Contact Us</li>
-            <li className="hover:text-white duration-200 cursor-pointer">Privacy & Policy</li>
-            <li className="hover:text-white duration-200 cursor-pointer">Changelog</li>
+            <li className="hover:text-white duration-200 cursor-pointer">
+              About Us
+            </li>
+            <li className="hover:text-white duration-200 cursor-pointer">
+              Terms of use
+            </li>
+            <li className="hover:text-white duration-200 cursor-pointer">
+              Our services
+            </li>
+            <li className="hover:text-white duration-200 cursor-pointer">
+              Contact Us
+            </li>
+            <li className="hover:text-white duration-200 cursor-pointer">
+              Privacy & Policy
+            </li>
+            <li className="hover:text-white duration-200 cursor-pointer">
+              Changelog
+            </li>
           </ul>
         </div>
         <div className="col-span-1">
           <h1 className="text-bold text-xl mb-5">Popular Services</h1>
           <ul className="flex flex-col gap-3 text-xs text-text_gray">
-            <li className="hover:text-white duration-200 cursor-pointer">Cardiology Care</li>
-            <li className="hover:text-white duration-200 cursor-pointer">Urgent Care</li>
-            <li className="hover:text-white duration-200 cursor-pointer">Orthopedic Care</li>
-            <li className="hover:text-white duration-200 cursor-pointer">Diagnosis department</li>
-            <li className="hover:text-white duration-200 cursor-pointer">Gastroenterology</li>
-            <li className="hover:text-white duration-200 cursor-pointer">Dental service</li>
+            <li className="hover:text-white duration-200 cursor-pointer">
+              Cardiology Care
+            </li>
+            <li className="hover:text-white duration-200 cursor-pointer">
+              Urgent Care
+            </li>
+            <li className="hover:text-white duration-200 cursor-pointer">
+              Orthopedic Care
+            </li>
+            <li className="hover:text-white duration-200 cursor-pointer">
+              Diagnosis department
+            </li>
+            <li className="hover:text-white duration-200 cursor-pointer">
+              Gastroenterology
+            </li>
+            <li className="hover:text-white duration-200 cursor-pointer">
+              Dental service
+            </li>
           </ul>
         </div>
-        <div className="col-span-3 max-sm:col-span-1 flex flex-col">
-        <h1 className="text-bold text-xl mb-5">Popular Services</h1>
-         <FooterRecent />
-         <FooterRecent />
+        <div className="col-span-3 max-sm:col-span-1 flex flex-col items-center text-center">
+          <h1 className="text-bold text-xl mb-5">
+            Popular Services
+          </h1>
+          <FooterRecent />
+          <FooterRecent />
         </div>
       </div>
     </div>

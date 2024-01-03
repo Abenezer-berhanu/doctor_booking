@@ -12,10 +12,10 @@ function FooterRecent() {
         className="w-10 h-10 sml:w-16 sml:h-16 rounded-lg border"
       />
       <span className="flex flex-col">
-      <h2 className="text-semibold max-w-[250px]">
+      <h2 className="text-semibold max-w-[250px] text-start">
         Transfusion strategy and heart surgery
       </h2>
-      <p className="text-primary text-sm">June 12,2003</p>
+      <p className="text-primary text-sm text-start">June 12,2003</p>
       </span>
     </div>
   );
