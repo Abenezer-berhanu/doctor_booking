@@ -6,7 +6,7 @@ function DoctorsSmall() {
   return (
     <div className="my-10 w-full flex flex-col gap-4">
       <div className="text-center">
-        <h1 className="text-4xl my-5 text-black font-bold tracking-wider">
+        <h1 className="text-4xl my-5 text-black dark:text-white font-bold tracking-wider">
           We Are Here <span className="text-primary">For You</span>
         </h1>
         <p className="text-sm max-w-[700px] text-balance mx-auto text-text_gray my-5">

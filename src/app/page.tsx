@@ -195,7 +195,7 @@ export default function Home() {
                 <FaPlus />
               </Button>
             </div>
-            <div className="w-full bg-white p-2 sml:row-start-2 sml:row-span-4 shadow-md border border-slate-300">
+            <div className="w-full p-2 sml:row-start-2 sml:row-span-4 shadow-md border border-slate-300">
               <Image
                 src={"/heart.png"}
                 width={40}

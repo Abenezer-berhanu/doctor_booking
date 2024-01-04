@@ -6,6 +6,7 @@ import Pages from "./Pages";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { Button } from "../ui/button";
 import { FaPlus } from "react-icons/fa6";
+import { ModeToggle } from "../ModeToggle";
 
 function Navbar() {
   return (
@@ -20,9 +21,7 @@ function Navbar() {
             height={20}
             className=""
           />
-          <p className="font-bold font-lg sml:text-xl text-primary">
-            DocTreat
-          </p>
+          <p className="font-bold font-lg sml:text-xl text-primary">DocTreat</p>
         </Link>
         <Pages />
         <div className="flex items-center gap-2">
@@ -48,6 +47,7 @@ function Navbar() {
             </Link>
           </Button>
         </div>
+      <ModeToggle />
       </div>
     </div>
   );

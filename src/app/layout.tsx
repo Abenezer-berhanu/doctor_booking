@@ -2,10 +2,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
-
-
 
 export default function RootLayout({
   children,
@@ -18,11 +17,18 @@ export default function RootLayout({
         className={`relative h-full antialiased font-sans ${inter.className}`}
         suppressHydrationWarning={true}
       >
-        <Navbar />
-        <main className="min-h-screen flex-1">{children}</main>
-        <div className="">
-          <Footer />
-        </div>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          <main className="min-h-screen flex-1">{children}</main>
+          <div className="">
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
