@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col relative">
-        <div className="w-full bg-no-repeat bg-cover h-screen bg-gradient-to-r from-cyan-400 to-blue-400 text-white flex justify-start sml:items-center relative z-10">
+        <div className="w-full h-screen bg-gradient-to-r from-cyan-400 to-blue-400 text-white flex justify-start sml:items-center relative z-10">
           <div className="bg-white h-36 w-36 rounded-full absolute mx-auto left-0 right-0 z-10 sml:top-4 max-sml:bottom-40 flex flex-col items-center justify-center p-5 text-black">
             <p className="text-primary">
               <strong className="text-5xl font-bold">95</strong>%
@@ -151,7 +151,7 @@ export default function Home() {
                 <AvatarFallback>AB</AvatarFallback>
               </Avatar>
               <Separator orientation="vertical" />
-              <p>
+              <p className="text-black">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Facilis veniam quibusdam inventore saepe porro enim magnam
               </p>

@@ -17,6 +17,15 @@ module.exports = {
       },
     },
     extend: {
+      animation: {
+        ["infinite-scroll"]: "infinite-scroll 25s linear infinite",
+      },
+      keyframes: {
+        "infinite-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
+      },
       screens: {
         sml: "700px",
         lgl: "950px",
@@ -24,6 +33,7 @@ module.exports = {
       colors: {
         text_gray: "#969fa3",
         button_blue: "#3C59A5",
+        green_color: "#29C28E",
         bg_gray: "#EEF4FF",
         bg_blue: "#3C59A5",
         bg_black: "#010E17",

@@ -29,7 +29,7 @@ function Navbar() {
             <FaPhoneVolume className="text-primary text-lg sml:text-2xl" />
             <span className="flex flex-col text-sm">
               <p className="text-sm font-semibold">Call Center:</p>
-              <p className="text-xs font-semibold text-black">
+              <p className="text-xs font-semibold text-black dark:text-white">
                 +(444) 864 434 57
               </p>
             </span>

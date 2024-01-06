@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
-import { Card, CardDescription, CardHeader } from "../ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
+import { Card } from "../ui/card";
 import { FaTwitter, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import Image from "next/image";
 
