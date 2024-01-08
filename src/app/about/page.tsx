@@ -1,4 +1,5 @@
 import AboutDoctorCard from "@/components/AboutLanding/AboutDoctorCard";
+import AboutFooter from "@/components/AboutLanding/AboutFooter";
 import AboutLanding from "@/components/AboutLanding/AboutLanding";
 import AboutTestimonials from "@/components/AboutLanding/AboutTestimonials";
 import { Metadata } from "next";
@@ -72,28 +73,7 @@ function page() {
             <AboutTestimonials />
           </div>
         </div>
-        <div className="w-full inline-flex flex-nowrap">
-          <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
-            <li className="">Image 1</li>
-            <li className="">Image 2</li>
-            <li className="">Image 3</li>
-            <li className="">Image 4</li>
-            <li className="">Image 5</li>
-            <li className="">Image 6</li>
-            <li className="">Image 7</li>
-            <li className="">Image 8</li>
-          </ul>
-          <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none infinite-scroll">
-            <li className="">Image 1</li>
-            <li className="">Image 2</li>
-            <li className="">Image 3</li>
-            <li className="">Image 4</li>
-            <li className="">Image 5</li>
-            <li className="">Image 6</li>
-            <li className="">Image 7</li>
-            <li className="">Image 8</li>
-          </ul>
-        </div>
+        <AboutFooter />
       </div>
     </div>
   );
