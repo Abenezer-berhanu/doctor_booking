@@ -10,6 +10,6 @@ export default [
     },
     {
         label: 'Contact us',
-        link: '/Contacts'
+        link: '/Contact'
     }
 ]
