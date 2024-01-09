@@ -36,7 +36,7 @@ function Navbar() {
           </span>
           <Button
             asChild
-            className="rounded-xl bg-primary font-semibold text-white"
+            className="rounded-xl bg-primary font-semibold text-white  max-sml:hidden"
           >
             <Link
               href={"/Appointment"}
