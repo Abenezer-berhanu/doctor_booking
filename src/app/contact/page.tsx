@@ -34,10 +34,10 @@ function page() {
   return (
     <div>
       <ContactHeader />
-      <h2 className="font-bold text-4xl text-primary text-center underline">
+      <h2 className="font-bold text-2xl sm:text-4xl text-primary text-center underline">
         Information for our Customers
       </h2>
-      <div className="grid grid-cols-3 gap-3 max-w-[1000px] mx-auto p-2 m-20">
+      <div className="grid sm:grid-cols-3 gap-3 max-w-[1000px] mx-auto p-2 mb-20 sm:my-20">
         {contactData.map((contact: ContactInfos) => (
           <ContactFooter contact={contact} key={contact.id} />
         ))}
