@@ -11,8 +11,8 @@ function Mininavbar() {
         href="mailto:abenuberhanu271@gmail.com"
         className="flex gap-1 items-center max-sml:text-xs"
       >
-        <AiTwotoneMail className="font-lg text-primary" />
-        example@gmail.com
+        <AiTwotoneMail className="text-lg text-primary max-xxs:text-xl" />
+        <p className="max-xxs:hidden">example@gmail.com</p>
       </Link>
       <span className="flex">
         <Link

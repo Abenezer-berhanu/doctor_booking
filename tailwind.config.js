@@ -20,6 +20,7 @@ module.exports = {
       screens: {
         sml: "700px",
         lgl: "950px",
+        xxs: "350px",
       },
       colors: {
         text_gray: "#969fa3",

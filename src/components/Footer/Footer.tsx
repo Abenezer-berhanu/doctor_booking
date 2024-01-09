@@ -9,7 +9,7 @@ function Footer() {
   return (
     <div className="w-full bg-bg_black py-20 text-white">
       <FooterCard />
-      <div className="grid grid-cols-2 max-sml:gap-5 sml:grid-cols-8 w-full mt-24 max-w-[1300px] px-2 mx-auto max-sml:place-items-center">
+      <div className="grid grid-cols-1 max-sml:gap-5 sml:grid-cols-8 w-full mt-24 max-w-[1300px] px-2 mx-auto max-sml:place-items-center">
         <div className="col-span-3 max-sm:col-span-1 flex flex-col gap-2 max-sml:items-center">
           <span className="text-xl font-bold flex gap-2 items-center text-primary">
             <Image
