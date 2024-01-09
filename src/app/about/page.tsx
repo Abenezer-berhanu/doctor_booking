@@ -27,11 +27,11 @@ function page() {
       </div>
       <div className="w-full border flex flex-col justify-start text-center sml:items-center relative z-10 gap-4 py-20 px-3">
         <p className="text-green_color font-semibold">| About Us</p>
-        <p className="text-4xl font-bold text-black dark:text-white">
+        <p className="text-3xl sml:text-4xl text-balance font-bold text-black dark:text-white">
           Find The Right Doctor Right
           <br /> <span className="text-primary">At Your Fingertip</span>
         </p>
-        <p className="text-text_gray max-w-[800px] mx-auto text-xs text-center">
+        <p className="text-text_gray max-w-[800px] mx-auto text-xs text-center text-balance">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae,
           fugit! Odit voluptatibus, ad doloremque obcaecati maxime accusamus
           porro saepe sapiente qui error eos officiis ab. Repellendus totam

@@ -9,7 +9,7 @@ function AboutFooter() {
       <div className="w-full h-full p-5 grid gap-2 sml:grid-cols-5">
         <div className="sml:col-span-2 flex flex-col gap-3 text-start max-sml:items-center">
           <p className="text-green_color text-sm font-semibold">| Services</p>
-          <h1 className="text-2xl sml:text-4xl text-primary tracking-wider font-bold">
+          <h1 className="text-2xl sml:text-4xl text-primary font-bold text-balance">
             We Provides Best <br /> Services in Hospital
           </h1>
           <p className="text-xs text-text_gray max-w-[400px]">
