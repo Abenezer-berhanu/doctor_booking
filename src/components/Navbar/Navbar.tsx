@@ -39,7 +39,7 @@ function Navbar() {
             className="rounded-xl bg-primary font-semibold text-white  max-sml:hidden"
           >
             <Link
-              href={"/Appointment"}
+              href={"/appointment"}
               className="flex items-center justify-center gap-2 text-sm"
             >
               Appointment

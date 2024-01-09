@@ -12,3 +12,26 @@ export const specialists = [
     "Urologist",
     "Oncologist"
 ];
+
+export const countries = [
+    'China',
+    'India',
+    'United States',
+    'Indonesia',
+    'Pakistan',
+    'Brazil',
+    'Nigeria',
+    'Bangladesh',
+    'Russia',
+    'Mexico',
+    'Japan',
+    'Ethiopia',
+    'Philippines',
+    'Egypt',
+    'Vietnam',
+    'DR Congo',
+    'Turkey',
+    'Iran',
+    'Germany',
+    'Thailand'
+  ]
