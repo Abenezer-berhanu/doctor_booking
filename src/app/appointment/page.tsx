@@ -1,6 +1,13 @@
 import { Button } from "@/components/ui/button";
+import { setAppointment } from "@/lib/actions";
 import { countries, specialists } from "@/lib/datas";
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "appointment",
+  description: "set an appointment to get Medical Treatment",
+};  
 
 function page() {
   return (
@@ -9,7 +16,7 @@ function page() {
         Take Appointment
       </h1>
 
-      <form action={""} className="flex flex-col gap-6">
+      <form action={setAppointment} className="flex flex-col gap-6">
         <div className="flex flex-col gap-2">
           <label htmlFor="name" className="font-semibold">
             Name<span className="text-red-500">*</span>
@@ -76,8 +83,8 @@ function page() {
             />
             <input
               type="text"
-              name="streetAddressLine2"
-              id="streetAddressLine2"
+              name="streetAddressLine1"
+              id="streetAddressLine1"
               placeholder="street address line 2"
               className="w-full sml:w-1/2 outline-none border-b-2 border-black indent-3 text-black dark:text-white py-1"
             />
@@ -91,7 +98,7 @@ function page() {
             />
             <input
               type="text"
-              name="Region"
+              name="region"
               placeholder="Region Name"
               className="w-full sml:w-1/4 outline-none border-b-2 border-black indent-3 text-black dark:text-white py-1"
             />
@@ -137,14 +144,14 @@ function page() {
               <label htmlFor="male" className="font-semibold">
                 Male
               </label>
-              <input type="radio" name="gender" id="male" />
+              <input type="radio" name="gender" id="male" value={'male'}/>
             </span>
 
             <span className="flex gap-3 items-center justify-center">
               <label htmlFor="female" className="font-semibold">
                 Female
               </label>
-              <input type="radio" name="gender" id="female" />
+              <input type="radio" name="gender" id="female" value={'female'}/>
             </span>
           </span>
         </div>
