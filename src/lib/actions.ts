@@ -44,6 +44,6 @@ export const setAppointment = async (appointment: FormData) => {
     console.log(error);
   } finally {
     revalidatePath("/myAppointments");
-    redirect("/myAppointments");
+    redirect("/appointments");
   }
 };
