@@ -1,6 +1,8 @@
 "use server";
-
-import { appointment } from "./types";
+import { redirect } from "next/navigation";
+import connectDB from "./config";
+import appointmentModel from "./models/appointmentModel";
+import { revalidatePath } from "next/cache";
 
 export const setAppointment = async (appointment: FormData) => {
   const {
@@ -33,5 +35,15 @@ export const setAppointment = async (appointment: FormData) => {
     specialist,
     symptom,
   };
-  console.log(obj)
+  try {
+    await connectDB();
+    const newAppointment = new appointmentModel(obj);
+    const savedAppointment = await newAppointment.save();
+    return savedAppointment;
+  } catch (error) {
+    console.log(error);
+  } finally {
+    revalidatePath("/myAppointments");
+    redirect("/myAppointments");
+  }
 };

@@ -3,14 +3,14 @@ import mongoose from "mongoose";
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.NEXT_PUBLIC_MONGO_URL!);
+    await mongoose.connect(process.env.NEXT_PUBLIC_MONGODB_URI!);
     const connection = mongoose.connection;
 
     connection.on("connected", () => {
       console.log("connected successfully");
     });
 
-    connection.on("error", (err:any) => {
+    connection.on("error", (err: any) => {
       console.log(
         "mongodb connection error. please make sure monogdb is running." + err
       );

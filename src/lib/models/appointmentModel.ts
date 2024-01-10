@@ -1,7 +1,8 @@
 // @ts-ignore
 import mongoose from "mongoose";
 
-const appointmentModel = new mongoose.Schema(
+
+const appointmentSchema = new mongoose.Schema(
   {
     firstName: {
       type: String,
@@ -45,9 +46,9 @@ const appointmentModel = new mongoose.Schema(
       unique: true,
     },
     gender: {
+      type: String,
       enum: ["male", "female"],
       required: true,
-      default: "male",
     },
     specialist: {
       type: String,
@@ -61,5 +62,5 @@ const appointmentModel = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.models?.Appointment || mongoose.model('Appointment', appointmentModel)
-
+export default mongoose.models?.Appointment ||
+  mongoose.model("Appointment", appointmentSchema);
