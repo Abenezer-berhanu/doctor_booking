@@ -1,10 +1,11 @@
+import { Button } from "@/components/ui/button";
 import { countries, specialists } from "@/lib/datas";
 import React from "react";
 
 function page() {
   return (
-    <div className="max-w-[700px] mx-auto">
-      <h1 className="text-3xl sml:text-4xl text-center text-primary font-semibold">
+    <div className="max-w-[700px] mx-auto pb-40">
+      <h1 className="text-3xl sml:text-4xl text-center text-primary font-bold my-3">
         Take Appointment
       </h1>
 
@@ -16,29 +17,32 @@ function page() {
           <span className="w-full flex gap-3">
             <input
               type="text"
-              name="name"
+              name="firstName"
+              id="name"
               placeholder="Enter First Name"
-              className="w-full sml:w-1/2 outline-none border-b-2 border-black indent-3 text-black"
+              className="w-full sml:w-1/2 outline-none border-b-2 border-black indent-3 text-black dark:text-white py-1"
             />
             <input
               type="text"
-              name="name"
+              name="lastName"
+              id="name"
               placeholder="Enter Last Name"
-              className="w-full sml:w-1/2 outline-none border-b-2 border-black indent-3 text-black"
+              className="w-full sml:w-1/2 outline-none border-b-2 border-black indent-3 text-black dark:text-white py-1"
             />
           </span>
         </div>
 
         <div className="flex flex-col gap-2">
-          <label htmlFor="phone" className="font-semibold">
+          <label htmlFor="date" className="font-semibold">
             Birth Date<span className="text-red-500">*</span>
           </label>
           <span className="w-full flex gap-3">
             <input
               type="date"
               name="date"
+              id="date"
               placeholder="Enter birth Date"
-              className="w-full outline-none border-b-2 border-black text-black px-2"
+              className="w-full outline-none border-b-2 border-black text-black px-2 dark:text-white py-1"
             />
           </span>
         </div>
@@ -51,8 +55,9 @@ function page() {
             <input
               type="text"
               name="phone"
+              id="phone"
               placeholder="### ### ### ###"
-              className="w-full outline-none border-b-2 border-black indent-3 text-black"
+              className="w-full outline-none border-b-2 border-black indent-3 text-black dark:text-white py-1"
             />
           </span>
         </div>
@@ -65,14 +70,16 @@ function page() {
             <input
               type="text"
               name="streetAddress"
+              id="streetAddress"
               placeholder="street address"
-              className="w-full sml:w-1/2 outline-none border-b-2 border-black indent-3 text-black"
+              className="w-full sml:w-1/2 outline-none border-b-2 border-black indent-3 text-black dark:text-white py-1"
             />
             <input
               type="text"
               name="streetAddressLine2"
+              id="streetAddressLine2"
               placeholder="street address line 2"
-              className="w-full sml:w-1/2 outline-none border-b-2 border-black indent-3 text-black"
+              className="w-full sml:w-1/2 outline-none border-b-2 border-black indent-3 text-black dark:text-white py-1"
             />
           </span>
           <span className="w-full flex gap-3 mt-3">
@@ -80,19 +87,19 @@ function page() {
               type="text"
               name="city"
               placeholder="City Name"
-              className="w-full sml:w-1/4 outline-none border-b-2 border-black indent-3 text-black"
+              className="w-full sml:w-1/4 outline-none border-b-2 border-black indent-3 text-black dark:text-white py-1"
             />
             <input
               type="text"
               name="Region"
               placeholder="Region Name"
-              className="w-full sml:w-1/4 outline-none border-b-2 border-black indent-3 text-black"
+              className="w-full sml:w-1/4 outline-none border-b-2 border-black indent-3 text-black dark:text-white py-1"
             />
             <input
               type="text"
               name="postalCode"
               placeholder="Postal Code"
-              className="w-full sml:w-1/4 outline-none border-b-2 border-black indent-3 text-black"
+              className="w-full sml:w-1/4 outline-none border-b-2 border-black indent-3 text-black dark:text-white py-1"
             />
             <select
               name="country"
@@ -115,13 +122,14 @@ function page() {
             <input
               type="email"
               name="email"
+              id="email"
               placeholder="johnDoe@example"
-              className="w-full outline-none border-b-2 border-black indent-3 text-black"
+              className="w-full outline-none border-b-2 border-black indent-3 text-black dark:text-white py-1"
             />
           </span>
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="email" className="font-semibold">
+          <label htmlFor="gender" className="font-semibold">
             Gender<span className="text-red-500">*</span>
           </label>
           <span className="w-full flex gap-3">
@@ -142,9 +150,13 @@ function page() {
         </div>
         <div className="flex flex-col gap-2">
           <label htmlFor="specialist" className="font-semibold">
-            Specialst<span className="text-red-500">*</span>
+            Specialist<span className="text-red-500">*</span>
           </label>
-          <select name="specialist" className="px-2 border-b-2 border-black">
+          <select
+            name="specialist"
+            id="specialist"
+            className="px-2 border-b-2 border-black dark:text-white py-1"
+          >
             <option value="">choose specialist</option>
             {specialists.map((specialist: string, id: number) => (
               <option value={specialist} key={id} className="h-10">
@@ -153,6 +165,20 @@ function page() {
             ))}
           </select>
         </div>
+        <div className="flex flex-col gap-2">
+          <label htmlFor="symptom" className="font-semibold">
+            Symptom<span className="text-red-500">*</span>
+          </label>
+          <span className="w-full flex gap-3">
+            <textarea
+              name="symptom"
+              id="symptom"
+              placeholder="Enter Your Symptom"
+              className="w-full outline-none border-b-2 border-black indent-3 text-black dark:text-white py-1"
+            />
+          </span>
+        </div>
+        <Button className="text-white font-semibold w-fit">Submit</Button>
       </form>
     </div>
   );
