@@ -7,6 +7,7 @@ import { FaPhoneVolume } from "react-icons/fa6";
 import { Button } from "../ui/button";
 import { FaPlus } from "react-icons/fa6";
 import { ModeToggle } from "../ModeToggle";
+import Dropdown from "./Dropdown";
 
 function Navbar() {
   return (
@@ -46,8 +47,11 @@ function Navbar() {
               <FaPlus className="h-full" />
             </Link>
           </Button>
+          <div className="sml:ml-5 ml-2 flex items-center justify-center">
+            <Dropdown />
+          </div>
         </div>
-      <ModeToggle />
+        <ModeToggle />
       </div>
     </div>
   );

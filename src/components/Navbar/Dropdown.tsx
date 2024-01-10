@@ -1,33 +1,30 @@
 "use client";
-
-import * as React from "react";
-import { IoMdArrowDropdown } from "react-icons/io";
-
+import { MdAccountCircle } from "react-icons/md";
+import { IoMdLogOut } from "react-icons/io";
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-export function DropdownMenuRadioGroupDemo() {
-  const [position, setPosition] = React.useState("bottom");
-
+function Dropdown() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild><p className="flex items-end cursor-pointer">Services <IoMdArrowDropdown /></p></DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
-        <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
+      <DropdownMenuTrigger>
+        <MdAccountCircle className="text-3xl h-full"/>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
-          <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="bottom">Bottom</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="right">Right</DropdownMenuRadioItem>
-        </DropdownMenuRadioGroup>
+        <DropdownMenuItem>Profile</DropdownMenuItem>
+        <DropdownMenuItem>Appointments</DropdownMenuItem>
+        <DropdownMenuItem className="font-bold flex gap-1 items-center">Logout<IoMdLogOut className="text-lg"/></DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
 }
+
+export default Dropdown;

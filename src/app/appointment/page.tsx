@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 function page() {
   return (
-    <div className="max-w-[700px] mx-auto pb-40">
+    <div className="max-w-[700px] mx-auto pb-40 relative">
       <h1 className="text-3xl sml:text-4xl text-center text-primary font-bold my-3">
         Take Appointment
       </h1>
@@ -26,6 +26,7 @@ function page() {
               <input
                 type="text"
                 name="firstName"
+                required
                 id="name"
                 placeholder="Enter First Name"
                 className="w-full sml:w-1/2 outline-none border-b-2 border-black indent-3 text-black dark:text-white py-1"
@@ -33,6 +34,7 @@ function page() {
               <input
                 type="text"
                 name="lastName"
+                required
                 id="name"
                 placeholder="Enter Last Name"
                 className="w-full sml:w-1/2 outline-none border-b-2 border-black indent-3 text-black dark:text-white py-1"
@@ -48,6 +50,7 @@ function page() {
               <input
                 type="date"
                 name="date"
+                required
                 id="date"
                 placeholder="Enter birth Date"
                 className="w-full outline-none border-b-2 border-black text-black px-2 dark:text-white py-1"
@@ -63,6 +66,7 @@ function page() {
               <input
                 type="text"
                 name="phone"
+                required
                 id="phone"
                 placeholder="### ### ### ###"
                 className="w-full outline-none border-b-2 border-black indent-3 text-black dark:text-white py-1"
@@ -78,6 +82,7 @@ function page() {
               <input
                 type="text"
                 name="streetAddress"
+                required
                 id="streetAddress"
                 placeholder="street address"
                 className="w-full sml:w-1/2 outline-none border-b-2 border-black indent-3 text-black dark:text-white py-1"
@@ -85,6 +90,7 @@ function page() {
               <input
                 type="text"
                 name="streetAddressLine1"
+                required
                 id="streetAddressLine1"
                 placeholder="street address line 2"
                 className="w-full sml:w-1/2 outline-none border-b-2 border-black indent-3 text-black dark:text-white py-1"
@@ -94,23 +100,27 @@ function page() {
               <input
                 type="text"
                 name="city"
+                required
                 placeholder="City Name"
                 className="w-full sml:w-1/4 outline-none border-b-2 border-black indent-3 text-black dark:text-white py-1"
               />
               <input
                 type="text"
                 name="region"
+                required
                 placeholder="Region Name"
                 className="w-full sml:w-1/4 outline-none border-b-2 border-black indent-3 text-black dark:text-white py-1"
               />
               <input
                 type="number"
                 name="postalCode"
+                required
                 placeholder="Postal Code"
                 className="w-full sml:w-1/4 outline-none border-b-2 border-black indent-3 text-black dark:text-white py-1"
               />
               <select
                 name="country"
+                required
                 className="sml:w-1/4 p-2 border-b-2 border-black"
               >
                 <option value="Romania">Romania</option>
@@ -130,6 +140,7 @@ function page() {
               <input
                 type="email"
                 name="email"
+                required
                 id="email"
                 placeholder="johnDoe@example"
                 className="w-full outline-none border-b-2 border-black indent-3 text-black dark:text-white py-1"
@@ -145,7 +156,13 @@ function page() {
                 <label htmlFor="male" className="font-semibold">
                   Male
                 </label>
-                <input type="radio" name="gender" id="male" value={"male"} />
+                <input
+                  type="radio"
+                  name="gender"
+                  required
+                  id="male"
+                  value={"male"}
+                />
               </span>
 
               <span className="flex gap-3 items-center justify-center">
@@ -155,6 +172,7 @@ function page() {
                 <input
                   type="radio"
                   name="gender"
+                  required
                   id="female"
                   value={"female"}
                 />
@@ -167,6 +185,7 @@ function page() {
             </label>
             <select
               name="specialist"
+              required
               id="specialist"
               className="px-2 border-b-2 border-black dark:text-white py-1"
             >
@@ -185,6 +204,7 @@ function page() {
             <span className="w-full flex gap-3">
               <textarea
                 name="symptom"
+                required
                 id="symptom"
                 placeholder="Enter Your Symptom"
                 className="w-full outline-none border-b-2 border-black indent-3 text-black dark:text-white py-1"
