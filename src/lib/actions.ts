@@ -52,3 +52,9 @@ export const setAppointment = async (appointment: FormData) => {
     redirect("/appointments");
   }
 };
+
+
+export const checkupAppointment = (appointments:FormData) => {
+    const {name, date, specialist} = Object.fromEntries(appointments)
+    
+}

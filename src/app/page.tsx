@@ -72,56 +72,58 @@ export default async function Home() {
             />
           </div>
         </div>
-        <Card className=" w-[90%] mx-auto -mt-11 z-20 px-5">
+        <Card className=" w-[90%] mx-auto -mt-11 z-20 shadow-md shadow-primary sml:px-3">
           <CardHeader className="text-3xl text-primary font-bold text-wrap flex flex-col">
             Take Checkup Appointment and <br />
             <span className="text-white bg-primary w-fit">save your time.</span>
           </CardHeader>
-          <CardContent className="grid grid-cols-1 sm:grid-cols-4 gap-2">
-            <span className="flex flex-col">
-              <label htmlFor="name" className="text-black text-sm">
-                Name:
-              </label>
-              <input
-                type="text"
-                name="name"
-                placeholder="name"
-                className="border py-2 rounded-md indent-3 h-10 outline-none"
-              />
-            </span>
-            <span className="flex flex-col">
-              <label htmlFor="date" className="text-black text-sm">
-                Date:
-              </label>
-              <input
-                type="date"
-                name="date"
-                placeholder="date"
-                className="border py-2 rounded-md indent-3 h-10 outline-none"
-              />
-            </span>
-            <span className="flex flex-col">
-              <label htmlFor="date" className="text-black text-sm">
-                Specialist:
-              </label>
-              <select
-                name="specialist"
-                className="h-10 outline-none rounded-md"
-              >
-                <option value="">Select Specialist</option>
-                {specialists.map((specialist: string, id: number) => (
-                  <option value={specialist} key={id} className="h-10">
-                    {specialist}
-                  </option>
-                ))}
-              </select>
-            </span>
-            <span className="flex flex-col">
-              <label htmlFor="date" className="text-transparent text-sm">
-                Specialist:
-              </label>
-              <Button className="bg-primary rounded-3xl">Book Now</Button>
-            </span>
+          <CardContent >
+            <form action="" className="grid grid-cols-1 sml:grid-cols-4 gap-2 max-sml:gap-5">
+              <span className="flex flex-col">
+                <label htmlFor="name" className="text-black text-sm">
+                  Name:
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="name"
+                  className="border py-2 rounded-md indent-3 h-10 outline-none"
+                />
+              </span>
+              <span className="flex flex-col">
+                <label htmlFor="date" className="text-black text-sm">
+                  Date:
+                </label>
+                <input
+                  type="date"
+                  name="date"
+                  placeholder="date"
+                  className="border py-2 rounded-md px-2 h-10 outline-none"
+                />
+              </span>
+              <span className="flex flex-col">
+                <label htmlFor="date" className="text-black text-sm">
+                  Specialist:
+                </label>
+                <select
+                  name="specialist"
+                  className="h-10 outline-none rounded-md"
+                >
+                  <option value="">Select Specialist</option>
+                  {specialists.map((specialist: string, id: number) => (
+                    <option value={specialist} key={id} className="h-10">
+                      {specialist}
+                    </option>
+                  ))}
+                </select>
+              </span>
+              <span className="flex flex-col">
+                <label htmlFor="date" className="text-transparent text-sm">
+                  Specialist:
+                </label>
+                <Button className="bg-primary rounded-3xl">Book Now</Button>
+              </span>
+            </form>
           </CardContent>
         </Card>
         <div className="flex max-w-[1300px] mx-auto justify-center max-sm:flex-col sml:justify-evenly my-5 p-2 items-center bg-bg_gray">
