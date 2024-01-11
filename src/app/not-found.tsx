@@ -1,7 +1,22 @@
-import React from "react";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Terminal } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 function page() {
-  return <div className="flex h-screen w-full justify-center">not-found</div>;
+  return (
+    <Alert className="text-center">
+        <Image src={'/notFoundEmoji.png'} alt="not-found" width={500} height={500} className="w-full max-w-[500px] mx-auto"/>
+      <AlertTitle className="text-3xl font-bold">Page Not Found👀</AlertTitle>
+      <AlertDescription>
+        Page Not Found Please navigate to{" "}
+        <Link href={"/"} className="text-base font-semibold text-primary underline">
+          Home
+        </Link>
+        .
+      </AlertDescription>
+    </Alert>
+  );
 }
 
 export default page;
