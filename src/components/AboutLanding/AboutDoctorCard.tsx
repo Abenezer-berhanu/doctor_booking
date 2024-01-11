@@ -2,9 +2,17 @@ import Image from "next/image";
 import React from "react";
 import { Button } from "../ui/button";
 
-function AboutDoctorCard({image, description, header}:{image:string, description:string, header:string}) {
+function AboutDoctorCard({
+  image,
+  description,
+  header,
+}: {
+  image: string;
+  description: string;
+  header: string;
+}) {
   return (
-    <div className="rounded-lg shadow-md hover:shadow-lg shadow-primary hover:shadow-primary duration-300 flex flex-col gap-2 max-w-[250px]">
+    <div className="rounded-lg shadow-md hover:shadow-lg shadow-primary hover:shadow-primary duration-300 flex flex-col gap-2">
       <Image
         src={image}
         alt="image"
@@ -14,10 +22,11 @@ function AboutDoctorCard({image, description, header}:{image:string, description
         priority
       />
       <h1 className="px-2 font-bold">{header}</h1>
-      <p className="px-2 text-xs text-text_gray line-clamp-4">
-        
-      </p>
-      <Button className="text-sm rounded-none w-fit mt-auto rounded-bl-md bg-green_color" size={"sm"}>
+      <p className="px-2 text-xs text-text_gray line-clamp-3">{description}</p>
+      <Button
+        className="text-sm rounded-none w-fit mt-auto rounded-bl-md bg-green_color"
+        size={"sm"}
+      >
         Read More
       </Button>
     </div>

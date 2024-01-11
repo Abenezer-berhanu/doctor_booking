@@ -15,9 +15,8 @@ function page() {
   return (
     <div className="w-full min-h-screen mb-40 relative flex flex-col gap-5">
       <AboutLanding />
-
       <h1 className="text-center font-bold text-3xl">Our Teams</h1>
-      <div className="grid grid-cols-2 p-2 sml:grid-cols-4 gap-8 mx-auto">
+      <div className="grid grid-cols-2 p-2 max-w-[1000px] sml:grid-cols-4 gap-8 mx-auto max-sml:px-4">
         <AboutDoctorCard
           image="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D"
           description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem commodi

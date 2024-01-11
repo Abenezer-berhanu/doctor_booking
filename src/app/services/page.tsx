@@ -6,7 +6,7 @@ import React from "react";
 
 function page() {
   return (
-    <div className="pb-40 relative">
+    <div className="pb-40 relative px-4 ">
       <h1 className="text-4xl font-bold text-primary my-5 text-center underline">
         Services
       </h1>
