@@ -3,7 +3,7 @@ import { InfinitySpin } from "react-loader-spinner";
 
 function Loader() {
   return (
-    <div className="absolute z-50 w-full h-screen flex justify-center items-center bg-gray-400 bg-opacity-5">
+    <div className="absolute z-50 w-full left-0 top-0 flex justify-center items-center bg-gray-500 bg-opacity-10">
       <InfinitySpin
         // @ts-ignore
         visible={true}

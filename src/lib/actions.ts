@@ -54,7 +54,10 @@ export const setAppointment = async (appointment: FormData) => {
   }
 };
 
-export const checkupAppointment = async (appointments: FormData) => {
+export const checkupAppointment = async (
+  currentState: any,
+  appointments: FormData
+) => {
   const { name, date, specialist } = Object.fromEntries(appointments);
   const obj = {
     name,
@@ -63,13 +66,11 @@ export const checkupAppointment = async (appointments: FormData) => {
     specialist,
   };
   try {
+    await connectDB();
     const newAppointment = new checkupAppointmentModel(obj);
     await newAppointment.save();
-    return;
+    return { success: "Checkup Appointment registered Successfully!" };
   } catch (error) {
     console.log(error);
-  } finally {
-    revalidatePath("/checkupAppointments");
-    redirect("/checkupAppointments");
-  }
+  } 
 };

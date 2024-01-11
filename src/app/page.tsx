@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { specialists } from "@/lib/datas";
 import Image from "next/image";
 import Link from "next/link";
 import { HiMiniLightBulb } from "react-icons/hi2";
@@ -13,14 +12,14 @@ import DoctorsSmall from "@/components/DoctorsGallary/DoctorsSmall";
 import { MdOutlineStarPurple500 } from "react-icons/md";
 import LatestBlog from "@/components/LatestBlog/LatestBlog";
 import type { Metadata } from "next";
-import { checkupAppointment } from "@/lib/actions";
-import { Suspense } from "react";
-import Loader from "@/components/Spinner/Loader";
+import CheckupAppointmentForm from "@/components/Forms/CheckupAppointmentForm";
 
 export const metadata: Metadata = {
   title: "DocTreat",
-  description: "doctreat the latest website to help patient",
+  description:
+    "doctreat is the latest website to help and provide fast services for patients.",
 };
+
 
 export default async function Home() {
   return (
@@ -81,71 +80,7 @@ export default async function Home() {
             <span className="text-white bg-primary w-fit">save your time.</span>
           </CardHeader>
           <CardContent className="relative">
-            <Suspense fallback={<Loader />}>
-              <form
-                action={checkupAppointment}
-                className="grid grid-cols-1 sml:grid-cols-4 gap-2 max-sml:gap-5"
-              >
-                <span className="flex flex-col">
-                  <label
-                    htmlFor="name"
-                    className="text-black text-sm mb-2 font-semibold"
-                  >
-                    Name:
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    name="name"
-                    id="name"
-                    placeholder="name"
-                    className="border py-2 rounded-md indent-3 h-10 outline-none"
-                  />
-                </span>
-                <span className="flex flex-col">
-                  <label
-                    htmlFor="date"
-                    className="text-black text-sm mb-2 font-semibold"
-                  >
-                    Appointment Date:
-                  </label>
-                  <input
-                    type="date"
-                    required
-                    name="date"
-                    id="date"
-                    placeholder="date"
-                    className="border py-2 rounded-md px-2 h-10 outline-none"
-                  />
-                </span>
-                <span className="flex flex-col">
-                  <label
-                    htmlFor="date"
-                    className="text-black text-sm mb-2 font-semibold"
-                  >
-                    Specialist:
-                  </label>
-                  <select
-                    name="specialist"
-                    required
-                    className="h-10 outline-none rounded-md"
-                  >
-                    <option value="">Select Specialist</option>
-                    {specialists.map((specialist: string, id: number) => (
-                      <option value={specialist} key={id} className="h-10">
-                        {specialist}
-                      </option>
-                    ))}
-                  </select>
-                </span>
-                <span className="flex flex-col">
-                  <label htmlFor="date" className="text-transparent text-sm">
-                    Specialist:
-                  </label>
-                  <Button className="bg-primary rounded-3xl">Book Now</Button>
-                </span>
-              </form>
-            </Suspense>
+            <CheckupAppointmentForm />
           </CardContent>
         </Card>
         <div className="flex max-w-[1300px] mx-auto justify-center max-sm:flex-col sml:justify-evenly my-5 p-2 items-center bg-bg_gray">
