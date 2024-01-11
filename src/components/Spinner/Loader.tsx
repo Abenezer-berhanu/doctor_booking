@@ -1,15 +1,15 @@
 "use client";
-import { InfinitySpin } from "react-loader-spinner";
+import { FallingLines } from "react-loader-spinner";
 
 function Loader() {
   return (
-    <div className="absolute z-50 w-full left-0 top-0 flex justify-center items-center bg-gray-500 bg-opacity-10">
-      <InfinitySpin
-        // @ts-ignore
-        visible={true}
+    <div className="absolute z-50 h-full w-full left-0 top-0 flex justify-center items-center bg-gray-500 bg-opacity-10">
+      <FallingLines
+        color="#4fa94d"
         width="200"
-        color="#2563EB"
-        ariaLabel="infinity-spin-loading"
+        visible={true}
+        //@ts-ignore
+        ariaLabel="falling-circles-loading"
       />
     </div>
   );
