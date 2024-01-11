@@ -19,7 +19,7 @@ function CheckupAppointmentForm() {
   useEffect(() => {
     if (state?.success) {
       toast({
-        title: `${state?.success}`,
+        title: `✅${state?.success}`,
         color: "green",
       });
       //@ts-ignore

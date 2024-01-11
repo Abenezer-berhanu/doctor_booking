@@ -11,5 +11,9 @@ export default [
     {
         label: 'Contact us',
         link: '/contact'
+    },
+    {
+        label: 'Services',
+        link: '/services'
     }
 ]

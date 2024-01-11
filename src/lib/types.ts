@@ -21,3 +21,9 @@ export interface appointment {
   specialist: string;
   symptom: string;
 }
+
+export interface MedicalService {
+  title: string;
+  definition: string;
+  image: string;
+}

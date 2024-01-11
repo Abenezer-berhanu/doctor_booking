@@ -13,13 +13,13 @@ import { MdOutlineStarPurple500 } from "react-icons/md";
 import LatestBlog from "@/components/LatestBlog/LatestBlog";
 import type { Metadata } from "next";
 import CheckupAppointmentForm from "@/components/Forms/CheckupAppointmentForm";
+import TextAccordino from "@/components/Accordino/TextAccordino";
 
 export const metadata: Metadata = {
   title: "DocTreat",
   description:
     "doctreat is the latest website to help and provide fast services for patients.",
 };
-
 
 export default async function Home() {
   return (
@@ -100,12 +100,7 @@ export default async function Home() {
               <br />
               Reduce the Attacks
             </h1>
-            <p className="text-text_gray text-sm">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
-              similique. Perferendis, provident a? Fugiat corporis, asperiores
-              aspernatur maxime saepe debitis voluptatem facere, totam harum
-              suscipit vel, et vero eos id!
-            </p>
+            <TextAccordino />
             <div className="border shadow bg-transparent rounded-md flex max-sml:flex-col p-3 w-fit gap-2 text-sm">
               <Avatar className="h-full flex items-center">
                 <AvatarImage src="https://github.com/shadcn.png" />
@@ -117,10 +112,6 @@ export default async function Home() {
                 Facilis veniam quibusdam inventore saepe porro enim magnam
               </p>
             </div>
-
-            <Button className="text-white bg-primary rounded-3xl w-fit">
-              Add Details
-            </Button>
           </div>
         </div>
         <Separator />

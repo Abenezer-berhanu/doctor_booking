@@ -15,15 +15,33 @@ function page() {
   return (
     <div className="w-full min-h-screen mb-40 relative flex flex-col gap-5">
       <AboutLanding />
-      <p className="text-lg text-center text-bold text-green_color font-serif">
-        | Our Services
-      </p>
+
       <h1 className="text-center font-bold text-3xl">Our Teams</h1>
       <div className="grid grid-cols-2 p-2 sml:grid-cols-4 gap-8 mx-auto">
-        <AboutDoctorCard />
-        <AboutDoctorCard />
-        <AboutDoctorCard />
-        <AboutDoctorCard />
+        <AboutDoctorCard
+          image="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem commodi
+          ad! Alias odio nostrum autem odit nesciunt, omnis explicabo laboriosam."
+          header="Header Title"
+        />
+        <AboutDoctorCard
+          image="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem commodi
+          ad! Alias odio nostrum autem odit nesciunt, omnis explicabo laboriosam."
+          header="Header Title"
+        />
+        <AboutDoctorCard
+          image="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem commodi
+          ad! Alias odio nostrum autem odit nesciunt, omnis explicabo laboriosam."
+          header="Header Title"
+        />
+        <AboutDoctorCard
+          image="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem commodi
+          ad! Alias odio nostrum autem odit nesciunt, omnis explicabo laboriosam."
+          header="Header Title"
+        />
       </div>
       <div className="w-full border flex flex-col justify-start text-center sml:items-center relative z-10 gap-4 py-20 px-3">
         <p className="text-green_color font-semibold">| About Us</p>
