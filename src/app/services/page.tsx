@@ -1,5 +1,7 @@
 import AboutDoctorCard from "@/components/AboutLanding/AboutDoctorCard";
+import ServicesCards from "@/components/Services/ServicesCards";
 import ServicesHeader from "@/components/Services/ServicesHeader";
+import { Button } from "@/components/ui/button";
 import { services } from "@/lib/datas";
 import { MedicalService } from "@/lib/types";
 import React from "react";
@@ -22,16 +24,7 @@ function page() {
       <p className="text-lg text-center font-bold text-green_color my-8">
         | Our Services
       </p>
-      <div className="grid grid-cols-2 sml:grid-cols-4 gap-3 max-w-[1200px] mx-auto">
-        {services.map((service: MedicalService, idx: number) => (
-          <AboutDoctorCard
-            image={service.image}
-            description={service.definition}
-            header={service.title}
-            key={idx}
-          />
-        ))}
-      </div>
+      <ServicesCards />
     </div>
   );
 }
