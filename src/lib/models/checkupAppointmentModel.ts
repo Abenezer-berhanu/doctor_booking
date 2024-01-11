@@ -8,6 +8,6 @@ const checkupAppointmentSchema = new Schema({
         required: true,
     },
     date: {
-        
+        type: 
     }
 })
