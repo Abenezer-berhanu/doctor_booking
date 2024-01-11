@@ -9,6 +9,7 @@ export const setAppointment = async (appointment: FormData) => {
     firstName,
     lastName,
     phone,
+    birthDate,
     streetAddress,
     streetAddressLine1,
     city,
@@ -26,6 +27,7 @@ export const setAppointment = async (appointment: FormData) => {
     phone,
     streetAddress,
     streetAddressLine1,
+    birthDate,
     city,
     region,
     postalCode,
@@ -35,15 +37,16 @@ export const setAppointment = async (appointment: FormData) => {
     specialist,
     symptom,
   };
+  console.log(obj)
   try {
-    await connectDB();
-    const newAppointment = new appointmentModel(obj);
-    const savedAppointment = await newAppointment.save();
-    return savedAppointment;
+    // await connectDB(); 
+    // const newAppointment = new appointmentModel(obj);
+    // const savedAppointment = await newAppointment.save();
+    // return savedAppointment;
   } catch (error) {
     console.log(error);
   } finally {
-    revalidatePath("/myAppointments");
-    redirect("/appointments");
+    // revalidatePath("/myAppointments");
+    // redirect("/appointments");
   }
 };

@@ -49,7 +49,7 @@ function page() {
             <span className="w-full flex gap-3">
               <input
                 type="date"
-                name="date"
+                name="birthDate"
                 required
                 id="date"
                 placeholder="Enter birth Date"
