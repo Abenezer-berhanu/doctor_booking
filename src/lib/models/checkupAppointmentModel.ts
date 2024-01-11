@@ -1,13 +1,24 @@
 //@ts-ignore
-import mongoose from 'mongoose'
+import mongoose from "mongoose";
 const { Schema } = mongoose;
 
-const checkupAppointmentSchema = new Schema({
+const checkupAppointmentSchema = new Schema(
+  {
     name: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     date: {
-        type: 
-    }
-})
+      type: Date,
+      required: true,
+    },
+    specialist: {
+      type: String,
+      required: true,
+    },
+  },
+  { timestamps: true }
+);
+
+export default mongoose.models?.CheckupAppointment ||
+  mongoose.model("CheckupAppointment", checkupAppointmentSchema);
