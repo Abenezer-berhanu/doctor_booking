@@ -47,7 +47,7 @@ function Navbar() {
               <FaPlus className="h-full" />
             </Link>
           </Button>
-          <div className="sml:ml-5 ml-2 flex items-center justify-center">
+          <div className="sml:ml-5 ml-2 flex items-center justify-center text-primary">
             <Dropdown />
           </div>
         </div>

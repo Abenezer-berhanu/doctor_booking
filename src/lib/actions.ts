@@ -4,6 +4,7 @@ import connectDB from "./config";
 import appointmentModel from "./models/appointmentModel";
 import { revalidatePath } from "next/cache";
 import { appointment } from "./types";
+import checkupAppointmentModel from "./models/checkupAppointmentModel";
 
 export const setAppointment = async (appointment: FormData) => {
   const {
@@ -53,8 +54,22 @@ export const setAppointment = async (appointment: FormData) => {
   }
 };
 
-
-export const checkupAppointment = (appointments:FormData) => {
-    const {name, date, specialist} = Object.fromEntries(appointments)
-    
-}
+export const checkupAppointment = async (appointments: FormData) => {
+  const { name, date, specialist } = Object.fromEntries(appointments);
+  const obj = {
+    name,
+    //@ts-ignore
+    date: new Date(date),
+    specialist,
+  };
+  try {
+    const newAppointment = new checkupAppointmentModel(obj);
+    await newAppointment.save();
+    return;
+  } catch (error) {
+    console.log(error);
+  } finally {
+    revalidatePath("/checkupAppointments");
+    redirect("/checkupAppointments");
+  }
+};
