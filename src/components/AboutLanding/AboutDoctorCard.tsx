@@ -4,7 +4,6 @@ import React from "react";
 import { Button } from "../ui/button";
 import {
   AlertDialog,
-  AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
@@ -14,6 +13,12 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { MdClear } from "react-icons/md";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 function AboutDoctorCard({
   image,
@@ -59,6 +64,20 @@ function AboutDoctorCard({
                   {header}
                 </AlertDialogTitle>
                 <AlertDialogDescription>{description}</AlertDialogDescription>
+                <Accordion type="single" collapsible>
+                  <AccordionItem value="item-1">
+                    <AccordionTrigger>Is it 24/7 ?</AccordionTrigger>
+                    <AccordionContent>
+                      Yes. our service is available 24/7.
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-2">
+                    <AccordionTrigger>Is treatment good??</AccordionTrigger>
+                    <AccordionContent>
+                      Yes. our treatment is 100% satisfiable. from customers.
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
               </AlertDialogHeader>
               <AlertDialogFooter className="font-bold text-lg">
                 <AlertDialogCancel>

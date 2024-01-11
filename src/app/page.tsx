@@ -143,9 +143,6 @@ export default async function Home() {
                 consequuntur eum dolores quae, voluptates molestias est, aperiam
                 minima beatae consectetur totam quas. Architecto, maiores?
               </p>
-              <Button variant={"secondary"} className="rounded-full text-start">
-                <FaPlus />
-              </Button>
             </div>
             <div className="w-full p-2 sml:row-start-2 sml:row-span-4 shadow-md border border-slate-300">
               <Image
@@ -162,9 +159,6 @@ export default async function Home() {
                 consequuntur eum dolores quae, voluptates molestias est, aperiam
                 minima beatae consectetur totam quas. Architecto, maiores?
               </p>
-              <Button variant={"secondary"} className="rounded-full text-start">
-                <FaPlus />
-              </Button>
             </div>
             <div className="w-full sml:row-start-4 sml:row-span-4 shadow-md border border-slate-300 p-2">
               <Image
@@ -181,15 +175,12 @@ export default async function Home() {
                 consequuntur eum dolores quae, voluptates molestias est, aperiam
                 minima beatae consectetur totam quas. Architecto, maiores?
               </p>
-              <Button variant={"secondary"} className="rounded-full text-start">
-                <FaPlus />
-              </Button>
             </div>
             <div className="w-full bg-indigo-900 text-white rounded-md sml:row-start-5 sml:row-span-3 shadow-md border border-slate-300 p-5 text-start font-bold text-3xl">
               Merdio Care <br />
               Facilitates Provide Quick
-              <Button className="text-xs rounded-full">
-                view all services
+              <Button className="text-xs rounded-full" asChild>
+                <Link href={"/services"}>view all services</Link>
               </Button>
             </div>
             <div className="w-full bg-black sml:row-start-6 sml:row-span-2 shadow-md border border-slate-300 bg-[url('/allergy.jpg')] bg-cover"></div>

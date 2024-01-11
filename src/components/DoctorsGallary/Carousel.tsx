@@ -18,7 +18,7 @@ export function CarouselSlide() {
       <CarouselPrevious />
       <CarouselContent className="-ml-1">
         {imageLinks.map((image: string, index) => (
-          <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/4">
+          <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/6">
             <div className="p-1">
               <Card>
                 <CardContent className="flex aspect-square items-center justify-center p-6 relative rounded-md">
