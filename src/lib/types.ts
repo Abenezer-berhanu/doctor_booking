@@ -27,3 +27,9 @@ export interface MedicalService {
   definition: string;
   image: string;
 }
+
+export interface DoctorsType {
+  docImage: string;
+  docName: string;
+  docAspect: string;
+}

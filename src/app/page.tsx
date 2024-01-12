@@ -21,6 +21,8 @@ export const metadata: Metadata = {
     "doctreat is the latest website to help and provide fast services for patients.",
 };
 
+const arrayLength = new Array(5);
+
 export default async function Home() {
   return (
     <>
@@ -198,23 +200,21 @@ export default async function Home() {
               className="w-full sml:w-1/2"
             />
             <div className="bg-button_blue text-white pl-5 sml:pl-10 sml:w-1/2 p-3 flex flex-col justify-center">
-              <h1 className="font-bold text-2xl sml:text-3xl text-center">
+              <h1 className="font-bold text-2xl sml:text-3xl sml:text-start">
                 Our Client Happy <br /> Say About Us
               </h1>
-              <div className="text-yellow-500 flex justify-center items-center my-5">
-                <MdOutlineStarPurple500 />
-                <MdOutlineStarPurple500 />
-                <MdOutlineStarPurple500 />
-                <MdOutlineStarPurple500 />
-                <MdOutlineStarPurple500 />
+              <div className="text-yellow-500 flex max-sml:justify-center my-5">
+                {Array.from({ length: 5 }, (_, i) => (
+                  <MdOutlineStarPurple500 key={i} />
+                ))}
               </div>
-              <p className="text-sm text-text_gray">
+              <p className="text-sm text-text_gray sml:text-start">
                 &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Itaque magnam eligendi id vitae qui maiores labore cupiditate
                 eveniet ex. Nesciunt corporis illo laboriosam sint aperiam
                 placeat animi tempore, recusandae voluptatem!&quot;
               </p>
-              <div className="flex my-5 gap-3 items-center mx-auto justify-center">
+              <div className="flex my-5 gap-3 max-sml:mx-auto">
                 <Avatar>
                   <AvatarImage
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_cyKLTOT2BG1JqCOq4agn9t0Gv-VcD_Pi8w&usqp=CAU"

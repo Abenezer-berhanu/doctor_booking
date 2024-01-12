@@ -122,3 +122,66 @@ export const services = [
       "https://images.unsplash.com/photo-1494390248081-4e521a5940db?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8TnV0cml0aW9uJTIwYW5kJTIwRGlldGFyeSUyMENvdW5zZWxpbmd8ZW58MHx8MHx8fDA%3D",
   },
 ];
+
+export const doctors = [
+  {
+    docImage:
+      "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGRvY3RvcnN8ZW58MHx8MHx8fDA%3D",
+    docName: "Dr. Ravi O'Leigh",
+    docAspect: "Cardiac Surgery",
+  },
+  {
+    docImage:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJn7h4zNSvU73nq2u3vbJ3HP_MmSjyygJdGA&usqp=CAU",
+    docName: "Dr. John",
+    docAspect: "Bone Specialist",
+  },
+  {
+    docImage:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSetBue5OCx1GAXLJXROCBEe86h6HcBg29jsg&usqp=CAU",
+    docName: "Dr. Alexander",
+    docAspect: "Skin Specialist",
+  },
+  {
+    docImage:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_cyKLTOT2BG1JqCOq4agn9t0Gv-VcD_Pi8w&usqp=CAU",
+    docName: "Dr. Loura",
+    docAspect: "Brain Specialist",
+  },
+  {
+    docImage:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSetBue5OCx1GAXLJXROCBEe86h6HcBg29jsg&usqp=CAU",
+    docName: "Dr. Ethan",
+    docAspect: "Dermatology",
+  },
+  {
+    docImage:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJn7h4zNSvU73nq2u3vbJ3HP_MmSjyygJdGA&usqp=CAU",
+    docName: "Dr. Olivia",
+    docAspect: "Orthopedics",
+  },
+  {
+    docImage:
+      "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGRvY3RvcnN8ZW58MHx8MHx8fDA%3D",
+    docName: "Dr. Leo",
+    docAspect: "Oncology",
+  },
+  {
+    docImage:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_cyKLTOT2BG1JqCOq4agn9t0Gv-VcD_Pi8w&usqp=CAU",
+    docName: "Dr. Sophia",
+    docAspect: "Neurology",
+  },
+  {
+    docImage:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJn7h4zNSvU73nq2u3vbJ3HP_MmSjyygJdGA&usqp=CAU",
+    docName: "Dr. Benjamin",
+    docAspect: "Cardiology",
+  },
+  {
+    docImage:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSetBue5OCx1GAXLJXROCBEe86h6HcBg29jsg&usqp=CAU",
+    docName: "Dr. Emma",
+    docAspect: "Dermatology",
+  },
+];
