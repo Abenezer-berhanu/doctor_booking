@@ -1,6 +1,7 @@
 "use client";
 import { MdAccountCircle } from "react-icons/md";
 import { IoMdLogOut } from "react-icons/io";
+import { useRouter } from "next/navigation";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,8 +11,15 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
+import { Button } from "../ui/button";
+import { signOut } from "@/lib/auth";
 
 function Dropdown() {
+  const { push } = useRouter();
+  const handleLogout = async () => {
+    await signOut();
+    push("/login");
+  };
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
@@ -30,8 +38,10 @@ function Dropdown() {
           <Link href={"/checkupAppointments"}>Checkup Appointments</Link>
         </DropdownMenuItem>
         <DropdownMenuItem className="font-bold flex gap-1 items-center">
-          Logout
-          <IoMdLogOut className="text-lg" />
+          <Button className="text-xs" onClick={handleLogout}>
+            Logout
+            <IoMdLogOut className="text-lg" />
+          </Button>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

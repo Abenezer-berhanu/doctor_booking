@@ -8,8 +8,10 @@ import { Button } from "../ui/button";
 import { FaPlus } from "react-icons/fa6";
 import { ModeToggle } from "../ModeToggle";
 import Dropdown from "./Dropdown";
+import { auth } from "@/lib/auth";
 
-function Navbar() {
+async function Navbar() {
+  const session = await auth();
   return (
     <div className="">
       <Mininavbar />
@@ -25,11 +27,11 @@ function Navbar() {
           <p className="font-bold font-lg sml:text-xl text-primary">DocTreat</p>
         </Link>
         <Pages />
-        <div className="flex items-center gap-2">
-          <span className="flex items-center text-text_gray gap-2 max-sml:hidden">
-            <FaPhoneVolume className="text-primary text-lg sml:text-2xl" />
+        <div className="flex items-center max-sml:justify-around gap-2">
+          <span className="sml:flex items-center text-text_gray gap-2 hidden">
+            <FaPhoneVolume className="text-primary text-lg sml:text-xl" />
             <span className="flex flex-col text-sm">
-              <p className="text-sm font-semibold">Call Center:</p>
+              <p className="text-xs font-semibold">Call Center:</p>
               <p className="text-xs font-semibold text-black dark:text-white">
                 +(444) 864 434 57
               </p>
@@ -37,7 +39,7 @@ function Navbar() {
           </span>
           <Button
             asChild
-            className="rounded-xl bg-primary font-semibold text-white  max-sml:hidden"
+            className="rounded-xl bg-primary font-semibold text-white hidden sml:flex"
           >
             <Link
               href={"/appointment"}
@@ -47,9 +49,18 @@ function Navbar() {
               <FaPlus className="h-full" />
             </Link>
           </Button>
-          <div className="sml:ml-5 ml-2 flex items-center justify-center text-primary">
-            <Dropdown />
-          </div>
+          {session && (
+            <div className="sml:ml-5 ml-2 flex items-center justify-center text-primary">
+              <Dropdown />
+            </div>
+          )}
+          {!session && (
+            <Button size={"sm"} asChild>
+              <Link className="text-xs" href={"/login"}>
+                Log in
+              </Link>
+            </Button>
+          )}
         </div>
         <ModeToggle />
       </div>
