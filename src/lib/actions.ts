@@ -5,6 +5,7 @@ import appointmentModel from "./models/appointmentModel";
 import { revalidatePath } from "next/cache";
 import { appointment } from "./types";
 import checkupAppointmentModel from "./models/checkupAppointmentModel";
+import newsLetterModel from "./models/newsLetterModel";
 
 export const setAppointment = async (appointment: FormData) => {
   const {
@@ -72,5 +73,28 @@ export const checkupAppointment = async (
     return { success: "Checkup Appointment registered Successfully!" };
   } catch (error) {
     console.log(error);
-  } 
+  }
+};
+
+export const addNewsletter = async (currentState: any, formData: FormData) => {
+  const email = formData.get("email");
+  try {
+    await connectDB();
+    const existNewsletterEmail = await newsLetterModel
+      .findOne({ email })
+      .lean();
+    if (existNewsletterEmail) {
+      return { error: "Newsletter email already exists" };
+    } else {
+      const obj = { email };
+      const newNewsletter = new newsLetterModel(obj);
+      await newNewsletter.save();
+      return {
+        success:
+          "You have successfully Joined our newsletter, thanks for signing",
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
 };

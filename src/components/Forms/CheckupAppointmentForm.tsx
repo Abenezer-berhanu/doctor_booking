@@ -20,7 +20,6 @@ function CheckupAppointmentForm() {
     if (state?.success) {
       toast({
         title: `✅${state?.success}`,
-        color: "green",
       });
       //@ts-ignore
       formRef.current.reset();
