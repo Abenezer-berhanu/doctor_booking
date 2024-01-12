@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { HiMiniLightBulb } from "react-icons/hi2";
 import { IoStar } from "react-icons/io5";
-import { FaPlus } from "react-icons/fa6";
 import Gallary from "@/components/DoctorsGallary/Gallary";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import DoctorsSmall from "@/components/DoctorsGallary/DoctorsSmall";
@@ -20,8 +19,6 @@ export const metadata: Metadata = {
   description:
     "doctreat is the latest website to help and provide fast services for patients.",
 };
-
-const arrayLength = new Array(5);
 
 export default async function Home() {
   return (

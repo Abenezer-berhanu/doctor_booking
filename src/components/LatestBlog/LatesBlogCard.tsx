@@ -2,8 +2,7 @@ import React from "react";
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
 import Image from "next/image";
 import { RxAvatar } from "react-icons/rx";
-import { Button } from "../ui/button";
-import { FaPlus } from "react-icons/fa6";
+
 
 function LatesBlogCard() {
   return (
@@ -33,11 +32,6 @@ function LatesBlogCard() {
           Eget gravida cum sociis natoque placerat in egestas erat imperdiet
         </p>
       </CardContent>
-      <CardFooter>
-        <Button className="rounded-3xl gap-2">
-          View all Blog <FaPlus />
-        </Button>
-      </CardFooter>
     </Card>
   );
 }
