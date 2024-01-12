@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { signIn, signOut } from "@/lib/auth";
 import Link from "next/link";
 import { IoIosLock } from "react-icons/io";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 
 function page() {
   const handleSubmit = async () => {
@@ -56,21 +58,29 @@ function page() {
               className="py-2 indent-3 text-sm rounded-md bg-gray-50 w-full outline-slate-100"
             />
           </div>
-          <p>Forgot Password?</p>
+          <p className="font-semibold text-sm">Forgot Password?</p>
           <Button className="">Login</Button>
         </form>
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-2 gap-2 w-full">
           <form
             action=""
-            className="w-full border-2 border-slate-50 flex items-center justify-center"
-          ></form>
+            className="w-full border-2 border-slate-100 flex items-center justify-center"
+          >
+            <Button className="w-full rounded-none bg-transparent text-black text-2xl">
+              <FcGoogle />
+            </Button>
+          </form>
           <form
             action=""
-            className="w-full border-2 border-slate-50 flex items-center justify-center"
-          ></form>
+            className="w-full border-2 border-slate-100 flex items-center justify-center"
+          >
+            <Button className="w-full rounded-none bg-transparent text-black text-2xl">
+              <FaGithub />
+            </Button>
+          </form>
         </div>
         <small>
-          Don{"'"}t have an Account?<Link href={"/signup"}>Sign up</Link>
+          Don{"'"}t have an Account?<Link href={"/signup"} className="text-primary font-semibold hover:underline duration-150">&nbsp;Sign up</Link>
         </small>
       </div>
     </>
