@@ -21,7 +21,7 @@ export const {
   ],
   callbacks: {
     //@ts-ignore
-    async signIn({ account, profile }: any) {
+    async signIn({ user,account, profile }: any) {
       await connectDB();
       const provider = account?.provider;
       let email = profile?.email; //for google it's profile?.email  for github it's in profile?.email
@@ -30,7 +30,7 @@ export const {
       try {
         const existUser = await userModel.findOne({ email }).lean();
         if (existUser) {
-          return true;
+          return user;
         }
         if (provider == "google") {
           fullName = profile?.name;
@@ -46,7 +46,7 @@ export const {
         };
         const newUser = new userModel(newUserInfo);
         await newUser.save();
-        return true;
+        return user;
       } catch (error) {
         console.log(error);
       }

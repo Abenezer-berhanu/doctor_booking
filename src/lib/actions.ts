@@ -3,9 +3,10 @@ import { redirect } from "next/navigation";
 import connectDB from "./config";
 import appointmentModel from "./models/appointmentModel";
 import { revalidatePath } from "next/cache";
-import { appointment } from "./types";
+import bcrypt from "bcrypt";
 import checkupAppointmentModel from "./models/checkupAppointmentModel";
 import newsLetterModel from "./models/newsLetterModel";
+import userModel from "./models/userModel";
 
 export const setAppointment = async (appointment: FormData) => {
   const {
@@ -96,5 +97,37 @@ export const addNewsletter = async (currentState: any, formData: FormData) => {
     }
   } catch (error) {
     console.log(error);
+  }
+};
+
+export const registerUser = async (currentState: any, formData: FormData) => {
+  const { email, password, fullName, confirmPassword } =
+    Object.fromEntries(formData);
+  if (!email || !password || !fullName) {
+    return { error: "All fields are required" };
+  }
+  if (password !== confirmPassword) {
+    return { error: "Password don't match" };
+  }
+  try {
+    await connectDB();
+    const existUser = await userModel.findOne({ email });
+    if (existUser) {
+      return { error: "User already exists" };
+    }
+    const salt = await bcrypt.genSalt(10);
+    //@ts-ignore
+    const hashedPassword = await bcrypt.hash(password, salt);
+    const obj = {
+      email,
+      fullName,
+      password: hashedPassword,
+    };
+    const user = new userModel(obj);
+    await user.save();
+    return { success: "user successfully registered please login" };
+  } catch (error: any) {
+    console.log(error);
+    throw new Error("");
   }
 };
