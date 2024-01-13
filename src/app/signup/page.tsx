@@ -35,52 +35,63 @@ function page() {
           <span className="text-2xl font-bold flex items-center justify-center tracking-wider">
             <IoIosLock className="text-yellow-500" /> Auth
           </span>
-          <p className="text-sm font-semibold">Welcome back!</p>
+          <p className="text-sm font-semibold text-center">Welcome!</p>
         </div>
         <form action="" className="flex flex-col gap-4 w-full justify-start">
           <div className="flex flex-col gap-2">
             <label htmlFor="email" className="font-semibold flex gap-2">
-              Email
+              Email:
             </label>
             <input
               type="email"
+              name="email"
               id="email"
-              className="py-2 indent-3 text-sm rounded-md bg-gray-50 w-full outline-slate-100"
+              className="py-2 indent-3 text-sm rounded-md bg-gray-100 w-full outline-none"
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="fullname" className="font-semibold flex gap-2">
+              Full Name:
+            </label>
+            <input
+              type="fullName"
+              name="fullName"
+              id="fullname"
+              className="py-2 indent-3 text-sm rounded-md bg-gray-100 w-full outline-none"
             />
           </div>
           <div className="flex flex-col gap-2">
             <label htmlFor="password" className="font-semibold flex gap-2">
-              Password
+              Password:
             </label>
             <input
-              type="email"
-              id="email"
-              className="py-2 indent-3 text-sm rounded-md bg-gray-50 w-full outline-slate-100"
+              type="password"
+              name="password"
+              id="password"
+              className="py-2 indent-3 text-sm rounded-md bg-gray-100 w-full outline-none"
             />
           </div>
-          <p className="font-semibold text-sm"><Link href={'#'}>Forgot Password?</Link></p>
-          <Button className="">Log In</Button>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="confirmPassword" className="font-semibold flex gap-2">
+              Confirm Password:
+            </label>
+            <input
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+              className="py-2 indent-3 text-sm rounded-md bg-gray-100 w-full outline-none"
+            />
+          </div>
+          <Button className="">Sign up</Button>
         </form>
-        <div className="grid grid-cols-2 gap-2 w-full mt-2">
-          <form
-            action=""
-            className="w-full border-2 border-slate-100 flex items-center justify-center"
-          >
-            <Button className="w-full rounded-none bg-transparent text-black text-2xl hover:bg-transparent">
-              <FcGoogle />
-            </Button>
-          </form>
-          <form
-            action=""
-            className="w-full border-2 border-slate-100 flex items-center justify-center"
-          >
-            <Button className="w-full rounded-none bg-transparent text-black dark:text-white text-2xl hover:bg-transparent">
-              <FaGithub />
-            </Button>
-          </form>
-        </div>
         <small>
-          Don{"'"}t have an Account?<Link href={"/signup"} className="text-primary font-semibold hover:underline duration-150">&nbsp;Sign up</Link>
+          Have an Account before?
+          <Link
+            href={"/login"}
+            className="text-primary font-semibold hover:underline duration-150"
+          >
+            &nbsp;Log In
+          </Link>
         </small>
       </div>
     </>
