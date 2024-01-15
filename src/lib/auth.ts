@@ -4,6 +4,7 @@ import Google from "next-auth/providers/google";
 import connectDB from "./config";
 import userModel from "./models/userModel";
 import { authConfig } from "./auth.config";
+
 export const {
   handlers: { GET, POST },
   auth,
@@ -24,6 +25,19 @@ export const {
   //@ts-ignore
   callbacks: {
     //@ts-ignore
+    async session({ session, user }: any) {
+      await connectDB();
+      const existUser = await userModel
+        .findOne({ email: session?.user?.email })
+        .lean();
+      if (existUser) {
+        //@ts-ignore
+        session.user.id = existUser._id;
+        //@ts-ignore
+        session.user.isAdmin = existUser.isAdmin;
+      }
+    },
+    //@ts-ignore
     async signIn({ user, account, profile }: any) {
       await connectDB();
       const provider = account?.provider;
@@ -33,7 +47,7 @@ export const {
       try {
         const existUser = await userModel.findOne({ email }).lean();
         if (existUser) {
-          return user;
+          return existUser;
         }
         if (provider == "google") {
           fullName = profile?.name;
@@ -49,8 +63,7 @@ export const {
         };
         const newUser = new userModel(newUserInfo);
         const savedUser = await newUser.save();
-        user = { ...user, isAdmin: savedUser.isAdmin, userId: savedUser._id };
-        return user;
+        return savedUser;
       } catch (error) {
         console.log(error);
       }
