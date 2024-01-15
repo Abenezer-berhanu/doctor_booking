@@ -41,7 +41,6 @@ function page() {
               />
             </span>
           </div>
-
           <div className="flex flex-col gap-2">
             <label htmlFor="date" className="font-semibold">
               Birth Date<span className="text-red-500">*</span>

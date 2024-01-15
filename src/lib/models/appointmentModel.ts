@@ -62,6 +62,10 @@ const appointmentSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    userId: {
+      type: mongoose.Types.ObjectId,
+      required: true,
+    }
   },
   { timestamps: true }
 );

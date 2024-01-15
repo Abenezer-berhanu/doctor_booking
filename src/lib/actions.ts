@@ -7,8 +7,12 @@ import bcrypt from "bcrypt";
 import checkupAppointmentModel from "./models/checkupAppointmentModel";
 import newsLetterModel from "./models/newsLetterModel";
 import userModel from "./models/userModel";
+import { auth } from "./auth";
 
 export const setAppointment = async (appointment: FormData) => {
+  //@ts-ignore
+  const {user} = await auth();
+  
   const {
     firstName,
     lastName,
@@ -40,6 +44,7 @@ export const setAppointment = async (appointment: FormData) => {
     email,
     gender,
     specialist,
+    userId: user?.id,
     symptom,
   };
 
