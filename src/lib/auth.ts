@@ -3,12 +3,14 @@ import GitHub from "next-auth/providers/github";
 import Google from "next-auth/providers/google";
 import connectDB from "./config";
 import userModel from "./models/userModel";
+import { authConfig } from "./auth.config";
 export const {
   handlers: { GET, POST },
   auth,
   signIn,
   signOut,
 } = NextAuth({
+  ...authConfig,
   providers: [
     GitHub({
       clientId: process.env.AUTH_GITHUB_ID,
@@ -19,14 +21,15 @@ export const {
       clientSecret: process.env.AUTH_GOOGLE_SECRET,
     }),
   ],
+  //@ts-ignore
   callbacks: {
     //@ts-ignore
-    async signIn({ user,account, profile }: any) {
+    async signIn({ user, account, profile }: any) {
       await connectDB();
       const provider = account?.provider;
       let email = profile?.email; //for google it's profile?.email  for github it's in profile?.email
-      let fullName = ""; //for google it's profile?.name   for github it's in profile?.login
-      let image = ""; //for goggle it's profile?.picture   for github it's in profile?.avatar_url
+      let fullName: string = ""; //for google it's profile?.name   for github it's in profile?.login
+      let image: string = ""; //for goggle it's profile?.picture   for github it's in profile?.avatar_url
       try {
         const existUser = await userModel.findOne({ email }).lean();
         if (existUser) {
@@ -45,11 +48,13 @@ export const {
           image,
         };
         const newUser = new userModel(newUserInfo);
-        await newUser.save();
+        const savedUser = await newUser.save();
+        user = { ...user, isAdmin: savedUser.isAdmin, userId: savedUser._id };
         return user;
       } catch (error) {
         console.log(error);
       }
     },
+    ...authConfig.callbacks,
   },
 });
