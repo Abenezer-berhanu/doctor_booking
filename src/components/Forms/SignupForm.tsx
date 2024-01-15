@@ -6,6 +6,7 @@ import { Button } from "../ui/button";
 import { useEffect, useState } from "react";
 import { useToast } from "../ui/use-toast";
 import Loader from "../Spinner/Loader";
+import { signIn } from "next-auth/react";
 
 function SignupForm() {
   const router = useRouter();
@@ -78,7 +79,9 @@ function SignupForm() {
           className="py-2 indent-3 text-sm rounded-md bg-gray-100 w-full outline-none"
         />
       </div>
-      <Button onClick={() => setLoading(true)}>Sign up</Button>
+      <Button onClick={() => setLoading(true)} type="submit">
+        Sign up
+      </Button>
     </form>
   );
 }

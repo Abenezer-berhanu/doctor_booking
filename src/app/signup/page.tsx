@@ -2,21 +2,11 @@ import { Button } from "@/components/ui/button";
 import { signIn, signOut } from "@/lib/auth";
 import Link from "next/link";
 import { IoIosLock } from "react-icons/io";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 import SignupForm from "@/components/Forms/SignupForm";
 
 function page() {
-  const handleSubmit = async () => {
-    "use server";
-    await signIn("github");
-  };
-  const handleGoogleLogin = async () => {
-    "use server";
-    await signIn("google");
-  };
-  const handleLogout = async () => {
-    "use server";
-    await signOut();
-  };
   return (
     <>
       <div className="m-4 max-w-[400px] mx-auto p-4 rounded-md flex flex-col items-center justify-evenly shadow-md shadow-primary min-h-[500px]">

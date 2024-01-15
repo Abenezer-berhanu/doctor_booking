@@ -10,8 +10,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
+import { signOut } from "next-auth/react";
 
 function Dropdown() {
+  const handleLogout = async () => {
+    await signOut();
+  };
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
@@ -29,9 +33,13 @@ function Dropdown() {
         <DropdownMenuItem>
           <Link href={"/checkupAppointments"}>Checkup Appointments</Link>
         </DropdownMenuItem>
-        <DropdownMenuItem className="font-bold flex gap-1 items-center">
-          Logout
-          <IoMdLogOut className="text-lg" />
+        <DropdownMenuItem>
+          <form action={handleLogout}>
+            <button className="font-bold flex gap-1 items-center">
+              Logout
+              <IoMdLogOut className="text-lg" />
+            </button>
+          </form>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
