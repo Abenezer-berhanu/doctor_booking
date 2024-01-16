@@ -8,6 +8,8 @@ import checkupAppointmentModel from "./models/checkupAppointmentModel";
 import newsLetterModel from "./models/newsLetterModel";
 import userModel from "./models/userModel";
 import { auth } from "./auth";
+import { Resend } from "resend";
+import contactUsModel from "./models/contactUsModel";
 
 interface MedicalRecord {
   id: string;
@@ -16,7 +18,7 @@ interface MedicalRecord {
 }
 export const setAppointment = async (appointment: FormData) => {
   //@ts-ignore
-  const session: {user:MedicalRecord} = await auth();
+  const session: { user: MedicalRecord } = await auth();
   const {
     firstName,
     lastName,
@@ -159,6 +161,22 @@ export const getMyCheckupAppointments = async (id: string) => {
     await connectDB();
     const myCheckup = await checkupAppointmentModel.find({ userId: id }).lean();
     return myCheckup;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const handleContact = async (currentState: any, formData: FormData) => {
+  const { email, message }: any = Object.fromEntries(formData);
+  try {
+    await connectDB();
+    const obj = {
+      email,
+      message,
+    };
+    const newContactUsMessage = new contactUsModel(obj);
+    await newContactUsMessage.save();
+    return { success: "true" };
   } catch (error) {
     console.log(error);
   }
