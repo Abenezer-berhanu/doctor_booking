@@ -9,9 +9,14 @@ import newsLetterModel from "./models/newsLetterModel";
 import userModel from "./models/userModel";
 import { auth } from "./auth";
 
+interface MedicalRecord {
+  id: string;
+  name: string;
+  email: string;
+}
 export const setAppointment = async (appointment: FormData) => {
   //@ts-ignore
-  const { user } = await auth();
+  const session: {user:MedicalRecord} = await auth();
   const {
     firstName,
     lastName,
@@ -43,7 +48,7 @@ export const setAppointment = async (appointment: FormData) => {
     email,
     gender,
     specialist,
-    userId: user?.id,
+    userId: session?.user?.id,
     symptom,
   };
 

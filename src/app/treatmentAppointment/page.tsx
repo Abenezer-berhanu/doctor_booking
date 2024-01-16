@@ -16,8 +16,8 @@ interface authInterface {
 
 async function page() {
   //@ts-ignore
-  const { user }: { user: authInterface } = await auth();
-  const id = user?.id;
+  const session: { user: authInterface } = await auth();
+  const id = session?.user?.id;
   const appointment = await getMyAppointments(id);
   console.log(appointment);
   return (

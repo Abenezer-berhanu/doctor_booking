@@ -12,13 +12,10 @@ interface MedicalRecord {
   email: string;
 }
 
-interface Session {
-  user: MedicalRecord | null;
-}
 async function page() {
   //@ts-ignore
-  const { user }: { user: MedicalRecord } = await auth();
-  const checkupAppointments = await getMyCheckupAppointments(user?.id);
+  const session : {user: MedicalRecord } = await auth();
+  const checkupAppointments = await getMyCheckupAppointments(session?.user?.id);
   return (
     <div className="border m-5 rounded-md shadow-sm p-2 max-w-[1200px] mx-auto">
       <div className="flex justify-between">

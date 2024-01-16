@@ -22,8 +22,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const { user }: any = await auth();
-  console.log(user)
+  const session: any = await auth();
   return (
     <>
       <div className="flex flex-col relative">
@@ -82,7 +81,7 @@ export default async function Home() {
             <span className="text-white bg-primary w-fit">save your time.</span>
           </CardHeader>
           <CardContent className="relative">
-            <CheckupAppointmentForm id={user.id} />
+            <CheckupAppointmentForm id={session?.user.id} />
           </CardContent>
         </Card>
         <div className="flex max-w-[1300px] mx-auto justify-center max-sm:flex-col sml:justify-evenly my-5 p-2 items-center bg-bg_gray">
