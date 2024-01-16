@@ -17,8 +17,8 @@ export const authConfig = {
       const paths = ["/", "/about", "/contact", "/services"];
       const authorizedPaths = [
         "/profile",
-        "/TreatmentAppointment",
-        "/checkupAppointments",
+        "/treatmentAppointment",
+        "/checkupAppointment",
         "/appointment",
       ];
       const isAdminPath = request.nextUrl.pathname?.startsWith("/admin");
