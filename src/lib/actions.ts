@@ -8,7 +8,6 @@ import checkupAppointmentModel from "./models/checkupAppointmentModel";
 import newsLetterModel from "./models/newsLetterModel";
 import userModel from "./models/userModel";
 import { auth } from "./auth";
-import { Resend } from "resend";
 import contactUsModel from "./models/contactUsModel";
 
 interface MedicalRecord {
