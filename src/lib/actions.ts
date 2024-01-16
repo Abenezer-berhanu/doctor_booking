@@ -12,7 +12,6 @@ import { auth } from "./auth";
 export const setAppointment = async (appointment: FormData) => {
   //@ts-ignore
   const { user } = await auth();
-
   const {
     firstName,
     lastName,
@@ -80,6 +79,8 @@ export const checkupAppointment = async (
     return { success: "Checkup Appointment registered Successfully!" };
   } catch (error) {
     console.log(error);
+  } finally {
+    revalidatePath("/checkupAppointment");
   }
 };
 
