@@ -11,14 +11,18 @@ import {
 import { appointment } from "@/lib/types";
 import { formatDistanceToNow } from "date-fns";
 
-function AppointmentTable({ appointments }: { appointments: appointment[] }) {
+function CheckupAppointmentTable({
+  appointments,
+}: {
+  appointments: appointment[];
+}) {
   return (
     <Table>
       <TableCaption>A list of your recent checkup appointments.</TableCaption>
       <TableHeader>
         <TableRow>
-          <TableHead className="w-[100px]">Full Name</TableHead>
-          <TableHead>Phone</TableHead>
+          <TableHead className="w-[100px]">Name</TableHead>
+          <TableHead>checkup Date</TableHead>
           <TableHead>Status</TableHead>
           <TableHead>Specialist</TableHead>
           <TableHead className="text-right">Created Date</TableHead>
@@ -28,15 +32,15 @@ function AppointmentTable({ appointments }: { appointments: appointment[] }) {
         {appointments.length > 0 &&
           appointments.map((appointment: any) => (
             <TableRow key={appointment?._id} className="text-sm font-semibold">
-              <TableCell className="font-medium">
-                {appointment?.firstName}
-                &nbsp;
-                {appointment?.lastName}
-              </TableCell>
-              <TableCell>{appointment?.phone}</TableCell>
+              <TableCell className="font-medium">{appointment?.name}</TableCell>
               <TableCell>
-                <p className="w-fit bg-green_color px-2 rounded-md font-semibold">
-                  open
+                {formatDistanceToNow(new Date(appointment?.date), {
+                  addSuffix: true,
+                })}
+              </TableCell>
+              <TableCell>
+                <p className="w-fit bg-yellow-300 px-2 rounded-md font-semibold">
+                  waiting...
                 </p>
               </TableCell>
               <TableCell>{appointment?.specialist}</TableCell>
@@ -52,4 +56,4 @@ function AppointmentTable({ appointments }: { appointments: appointment[] }) {
   );
 }
 
-export default AppointmentTable;
+export default CheckupAppointmentTable;

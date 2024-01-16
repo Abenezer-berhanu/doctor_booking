@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const { user }: any = await auth();
+  console.log(user)
   return (
     <>
       <div className="flex flex-col relative">

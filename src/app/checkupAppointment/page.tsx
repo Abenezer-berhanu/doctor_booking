@@ -1,4 +1,4 @@
-import AppointmentTable from "@/components/Appointments/AppointmentTable";
+import CheckupAppointmentTable from "@/components/Appointments/CheckupAppointmentsTable";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { getMyCheckupAppointments } from "@/lib/actions";
@@ -32,7 +32,7 @@ async function page() {
       <Separator className="my-4" />
       <div>
         {/* @ts-ignore */}
-        <AppointmentTable appointments={checkupAppointments} />
+        <CheckupAppointmentTable appointments={checkupAppointments} />
       </div>
     </div>
   );

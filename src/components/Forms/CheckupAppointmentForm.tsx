@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 import { useRef } from "react";
 import Loader from "../Spinner/Loader";
 
-function CheckupAppointmentForm(id:any) {
+function CheckupAppointmentForm({id}:any) {
   const formRef = useRef();
   const { push } = useRouter();
   const { toast } = useToast();
