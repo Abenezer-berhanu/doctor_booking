@@ -11,8 +11,8 @@ import { auth } from "./auth";
 
 export const setAppointment = async (appointment: FormData) => {
   //@ts-ignore
-  const {user} = await auth();
-  
+  const { user } = await auth();
+
   const {
     firstName,
     lastName,
@@ -65,12 +65,13 @@ export const checkupAppointment = async (
   currentState: any,
   appointments: FormData
 ) => {
-  const { name, date, specialist } = Object.fromEntries(appointments);
+  const { name, date, specialist, id } = Object.fromEntries(appointments);
   const obj = {
     name,
     //@ts-ignore
     date: new Date(date),
     specialist,
+    userId: id,
   };
   try {
     await connectDB();
@@ -134,5 +135,25 @@ export const registerUser = async (currentState: any, formData: FormData) => {
   } catch (error: any) {
     console.log(error);
     throw new Error("");
+  }
+};
+
+export const getMyAppointments = async (id: string) => {
+  try {
+    await connectDB();
+    const myAppointments = await appointmentModel.find({ userId: id }).lean();
+    return myAppointments;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getMyCheckupAppointments = async (id: string) => {
+  try {
+    await connectDB();
+    const myCheckup = await checkupAppointmentModel.find({ userId: id }).lean();
+    return myCheckup;
+  } catch (error) {
+    console.log(error);
   }
 };

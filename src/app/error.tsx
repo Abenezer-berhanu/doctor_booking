@@ -5,7 +5,7 @@ import Link from "next/link";
 
 function error() {
   return (
-    <Alert className="text-center">
+    <Alert className="text-center relative">
       <Image
         src={"/error.jpg"}
         alt="not-found"

@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 import { useRef } from "react";
 import Loader from "../Spinner/Loader";
 
-function CheckupAppointmentForm() {
+function CheckupAppointmentForm(id:any) {
   const formRef = useRef();
   const { push } = useRouter();
   const { toast } = useToast();
@@ -61,6 +61,7 @@ function CheckupAppointmentForm() {
           className="border py-2 rounded-md px-2 h-10 outline-none"
         />
       </span>
+      <input type="hidden" name="id" value={id}/>
       <span className="flex flex-col">
         <label htmlFor="date" className="text-black text-sm mb-2 font-semibold">
           Specialist:

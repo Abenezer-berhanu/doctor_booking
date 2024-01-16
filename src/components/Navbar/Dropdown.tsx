@@ -28,10 +28,10 @@ function Dropdown() {
           <Link href={"/profile"}>Profile</Link>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Link href={"/TreatmentAppointments"}>Treatment Appointments</Link>
+          <Link href={"/treatmentAppointment"}>Treatment Appointments</Link>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Link href={"/checkupAppointments"}>Checkup Appointments</Link>
+          <Link href={"/checkupAppointment"}>Checkup Appointments</Link>
         </DropdownMenuItem>
         <DropdownMenuItem>
           <form action={handleLogout}>

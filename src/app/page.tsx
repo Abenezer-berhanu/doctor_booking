@@ -13,6 +13,7 @@ import LatestBlog from "@/components/LatestBlog/LatestBlog";
 import type { Metadata } from "next";
 import CheckupAppointmentForm from "@/components/Forms/CheckupAppointmentForm";
 import TextAccordino from "@/components/Accordino/TextAccordino";
+import { auth } from "@/lib/auth";
 
 export const metadata: Metadata = {
   title: "DocTreat",
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
+  const { user }: any = await auth();
   return (
     <>
       <div className="flex flex-col relative">
@@ -79,7 +81,7 @@ export default async function Home() {
             <span className="text-white bg-primary w-fit">save your time.</span>
           </CardHeader>
           <CardContent className="relative">
-            <CheckupAppointmentForm />
+            <CheckupAppointmentForm id={user.id} />
           </CardContent>
         </Card>
         <div className="flex max-w-[1300px] mx-auto justify-center max-sm:flex-col sml:justify-evenly my-5 p-2 items-center bg-bg_gray">
