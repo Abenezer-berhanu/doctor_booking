@@ -1,10 +1,12 @@
-import { Button } from "@/components/ui/button";
-import { signIn, signOut } from "@/lib/auth";
 import Link from "next/link";
 import { IoIosLock } from "react-icons/io";
-import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/fa";
 import SignupForm from "@/components/Forms/SignupForm";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Signup",
+  description: "DocTreat Signup Page help to save profile information",
+};
 
 function page() {
   return (

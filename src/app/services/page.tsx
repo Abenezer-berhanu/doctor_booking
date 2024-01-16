@@ -1,10 +1,13 @@
-import AboutDoctorCard from "@/components/AboutLanding/AboutDoctorCard";
 import ServicesCards from "@/components/Services/ServicesCards";
 import ServicesHeader from "@/components/Services/ServicesHeader";
-import { Button } from "@/components/ui/button";
-import { services } from "@/lib/datas";
-import { MedicalService } from "@/lib/types";
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Services",
+  description:
+    "Services show case the service DocTreat offers for their customers.",
+};
 
 function page() {
   return (

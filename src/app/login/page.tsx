@@ -4,6 +4,13 @@ import Link from "next/link";
 import { IoIosLock } from "react-icons/io";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
+import { Metadata } from "next";
+
+
+export const metadata:Metadata = {
+  title: "Login",
+  description: "DocTreat Login Page help to know and provide private information"
+}
 async function page() {
   const handleGoogleLogin = async () => {
     "use server";

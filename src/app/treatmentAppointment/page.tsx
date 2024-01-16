@@ -3,8 +3,14 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { getMyAppointments } from "@/lib/actions";
 import { auth } from "@/lib/auth";
+import { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "checkup Appointment",
+  description: "set an appointment to get Medical Treatment",
+};
 
 interface authInterface {
   id: string;
