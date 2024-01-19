@@ -1,4 +1,5 @@
 import AppointmentTable from "@/components/Appointments/AppointmentTable";
+import NoAppointmentFound from "@/components/Appointments/NoAppointmentFound";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { getMyAppointments } from "@/lib/actions";
@@ -38,8 +39,12 @@ async function page() {
       </div>
       <Separator className="my-4" />
       <div>
-        {/* @ts-ignore */}
-        <AppointmentTable appointments={appointment} />
+        {appointment ? (
+          //@ts-ignore
+          <AppointmentTable appointments={appointment} />
+        ) : (
+          <NoAppointmentFound />
+        )}
       </div>
     </div>
   );

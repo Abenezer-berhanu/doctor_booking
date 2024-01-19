@@ -1,4 +1,5 @@
 import CheckupAppointmentTable from "@/components/Appointments/CheckupAppointmentsTable";
+import NoAppointmentFound from "@/components/Appointments/NoAppointmentFound";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { getMyCheckupAppointments } from "@/lib/actions";
@@ -14,7 +15,7 @@ interface MedicalRecord {
 
 async function page() {
   //@ts-ignore
-  const session : {user: MedicalRecord } = await auth();
+  const session: { user: MedicalRecord } = await auth();
   const checkupAppointments = await getMyCheckupAppointments(session?.user?.id);
   return (
     <div className="border m-5 rounded-md shadow-sm p-2 max-w-[1200px] mx-auto">
@@ -28,8 +29,12 @@ async function page() {
       </div>
       <Separator className="my-4" />
       <div>
-        {/* @ts-ignore */}
-        <CheckupAppointmentTable appointments={checkupAppointments} />
+        {checkupAppointments ? (
+          //@ts-ignore
+          <CheckupAppointmentTable appointments={checkupAppointments} />
+        ) : (
+          <NoAppointmentFound />
+        )}
       </div>
     </div>
   );
